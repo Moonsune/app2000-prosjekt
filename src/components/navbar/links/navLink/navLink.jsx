@@ -1,3 +1,5 @@
+"use client";
+
 import { Component } from 'react';
 import styles from './navLink.module.css';
 import { usePathname } from 'next/navigation';
