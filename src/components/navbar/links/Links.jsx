@@ -6,7 +6,8 @@ const Links = () => {
         {title: 'Home', path: '/'},
         {title: 'About', path: '/about'},
         {title: 'Contact', path: '/contact'},
-        {title: 'Blog', path: '/blog'}
+        {title: 'Blog', path: '/blog'},
+        {title: 'Menu', path: '/menu'}
     ];
     return (
         <div className={styles.links}>

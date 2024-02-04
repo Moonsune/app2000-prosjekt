@@ -1,5 +1,15 @@
+import styles from './footer.module.css';
+import Image from 'next/image';
+
 const Footer = () => {
-    return <div><h2>Footer</h2></div>;
-}
+    return ( 
+    <div className={styles.container}>
+        <div className={styles.logo}>
+            <Image src="https://www.pizzafjoset.no/wp-content/uploads/2022/06/Logohvit.png" fill/>
+        </div>
+        
+    </div>
+    )
+};
 
 export default Footer;

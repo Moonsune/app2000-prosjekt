@@ -1,10 +1,10 @@
 .container {
-    height: 100px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
+    gap: 20px;
+    
 }
 
 .logo {

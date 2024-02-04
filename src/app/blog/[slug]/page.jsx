@@ -1,6 +1,14 @@
+import styles from './blog.module.css'
+
 const SinglePostPage = () => {
     return (
-        <div>SinglePostPage</div>
+        <div 
+        className={styles.container}>
+            <postCard />
+            <postCard />
+            <postCard />
+            <postCard />
+        </div>
     )
     };
 
