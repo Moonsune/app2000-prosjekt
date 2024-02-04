@@ -6,7 +6,7 @@ const PostCard = () => {
         <div className={styles.container}>
             <div className={styles.top}>
                 <div className={styles.imageContainer}>
-                    <Image src='/vercel.svg'/>
+                    <Image src='/vercel.svg' alt=''/>
                 </div>
                 <span className={styles.date}>4.2.2024</span>
             </div>

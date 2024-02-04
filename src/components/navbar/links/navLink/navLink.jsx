@@ -1,6 +1,5 @@
 "use client";
 
-//import { Component } from 'react'; // This import seems unnecessary since you're using a functional component
 import Link from 'next/link'; // Ensure you import Link from 'next/link'
 import styles from './NavLink.module.css'; // Assuming the CSS module is correctly named and imported
 import { usePathname } from 'next/navigation';

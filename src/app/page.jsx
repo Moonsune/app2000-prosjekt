@@ -13,7 +13,7 @@ const Home = () => {
             <button>Order now</button>
         </div>
         <div className={styles.imageContainer}> 
-            <Image src="https://www.pizzafjoset.no/wp-content/uploads/2022/06/Logohvit.png" fill/>
+            <Image src="https://www.pizzafjoset.no/wp-content/uploads/2022/06/Logohvit.png" fill alt=""/>
         </div>
     </div>
     )
