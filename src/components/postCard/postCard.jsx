@@ -1,8 +1,18 @@
+"use client";
+
 import styles from './postCard.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-const PostCard = () => {
+const PostCard = ({post}) => {
+    const router = useRouter();
+
+    const handleClick = () => {
+        console.log('clicked');
+    }
+
+    console.log (post.slug)
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -12,9 +22,9 @@ const PostCard = () => {
                 <span className={styles.date}>4.2.2024</span>
             </div>
             <div className={styles.bottom}>
-                <h1 className={styles.title}>Post Title</h1>
-                <p className={styles.text}>Magna eu nisi nisi Lorem irure nisi aliqua eiusmod nostrud irure mollit ut incididunt.</p>
-                <Link className={styles.link} href='/post/1'> Read more </Link>
+                <h1 className={styles.title}>{post.title}</h1>
+                <p className={styles.text}>{post.body}</p>
+                <Link className={styles.link} href={`/blog/${post._id}`} onClick={console.log(post._id)}> Read more </Link>
             </div>
         </div>
     )
