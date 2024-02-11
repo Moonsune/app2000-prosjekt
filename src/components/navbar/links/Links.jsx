@@ -1,21 +1,72 @@
-import styles from "./links.module.css";
-import Link from "next/link";
+'use client'
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import styles from './links.module.css';
 
 const Links = () => {
+    const [showMenu, setShowMenu] = useState(false);
+    const hamburgerRef = useRef(null);
+    const dropdownRef = useRef(null);
+
     const links = [
-        {title: 'Home', path: '/'},
-        {title: 'About', path: '/about'},
-        {title: 'Contact', path: '/contact'},
-        {title: 'Blog', path: '/blog'},
-        {title: 'Menu', path: '/menu'}
+        { title: 'Hjem', path: '/' },
+        { title: 'Om oss', path: '/about' },
+        { title: 'Kontakt', path: '/contact' },
+        { title: 'Blogg', path: '/blog' },
+        { title: 'Meny', path: '/menu' }
     ];
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target) && !hamburgerRef.current.contains(event.target)) {
+                setShowMenu(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
+
     return (
         <div className={styles.links}>
-            {links.map((link => (
-                <Link href={link.path} key={link.title}> {link.title} </Link>
-            )))}
+            <div
+                ref={hamburgerRef}
+                className={`${styles.hamburger} ${showMenu ? styles.closeMenu : ''}`}
+                onClick={toggleMenu}
+            >
+                <div className={`${styles.bar} ${showMenu ? styles.barX1 : ''}`}></div>
+                <div className={`${styles.bar} ${showMenu ? styles.hideMiddleBar : ''}`}></div>
+                <div className={`${styles.bar} ${showMenu ? styles.barX2 : ''}`}></div>
+            </div>
+            <div
+                className={`${styles.linksContainer} ${showMenu ? styles.showOnSmall : styles.hideOnSmall}`}
+                ref={dropdownRef}
+            >
+                {links.map(link => (
+                    <div key={link.title} onClick={() => setShowMenu(false)}>
+                        <Link href={link.path}>
+                            {link.title}
+                        </Link>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
 
 export default Links;
+
+
+
+
+
+
+
+
+
