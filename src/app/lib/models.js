@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema({
 );
 
 const postSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        required: true
+    },
     title: {
         type: String,
         required: true

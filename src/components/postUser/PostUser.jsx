@@ -23,8 +23,8 @@ const PostUser = async ({userId}) => {
         <div>
             <div className={styles.container}>
                 <Suspense fallback={<div>Loading...</div>}>
-                <span className={styles.title}>Author</span>
-                <span className={styles.username}>{user.username}</span>
+                    <span className={styles.title}>Author</span>
+                    <span className={styles.username}>{user ? user.username: "Username Missing"}</span>
                 </Suspense>
             </div>
         </div>

@@ -5,7 +5,8 @@ import { User } from "./models";
 export const getPosts = async () => {
     try {
         connectToDb();
-        const posts = await Post.find();
+        const posts = await Post.find().exec();
+        console.log("posts found", posts);
         return posts;
         
     } catch (error) {
@@ -18,7 +19,8 @@ export const getPost = async (slug) => {
     try {
         connectToDb();
         console.log('slug', slug);
-        const post = await Post.findById({slug});
+        const post = await Post.findOne({slug});
+        console.log("post found", post)
         return post;
         
     } catch (error) {

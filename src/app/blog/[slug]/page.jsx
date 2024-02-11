@@ -36,10 +36,12 @@ const SinglePost = async ({params}) => {
             fill 
             alt=""/>
             </div>
-            <div className={styles.textContainer}> 
+            <div className={styles.textContainer}>
+                <Suspense fallback={<div>Loading...</div>}>
                 <h2 className={styles.title}>
-                    {post.title}
+                    {post ? post.title : "Couldn't find the post."}
                 </h2>
+                </Suspense>
                 <div className={styles.details}>
                     <Image className={styles.avatar} src="https://i.ytimg.com/vi/wtbScEgNgMA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNe7BBkF4Jzn9VAGUjpX7p1upouw"
                     height={50}
@@ -57,7 +59,13 @@ const SinglePost = async ({params}) => {
 
                 </div>
                 <div className={styles.content}>
-                    <p className={styles.text}>{post.body}</p>
+                    <div className={styles.text}>
+                    {post && (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        {post ? post.desc : "Couldn't find the post."}
+                    </Suspense>
+                    )}
+                    </div>
                 </div>
             </div>
         </div>

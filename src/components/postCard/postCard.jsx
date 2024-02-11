@@ -6,11 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const PostCard = ({post}) => {
-    const router = useRouter();
-
-    const handleClick = () => {
-        console.log('clicked');
-    }
+    //const router = useRouter();
 
     console.log (post.slug)
     return (
@@ -23,7 +19,7 @@ const PostCard = ({post}) => {
             </div>
             <div className={styles.bottom}>
                 <h1 className={styles.title}>{post.title}</h1>
-                <p className={styles.text}>{post.body}</p>
+                <p className={styles.text}>{post.desc}</p>
                 <Link className={styles.link} href={`/blog/${post._id}`} onClick={console.log(post._id)}> Read more </Link>
             </div>
         </div>
