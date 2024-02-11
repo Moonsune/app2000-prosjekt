@@ -1,16 +1,19 @@
 .container {
+    background-color: black;
     height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding-left: 20px; 
+    padding-right: 20px; 
 
 }
 
 .logo {
     position: relative;
     height: 40px;
-    width: 100px;
+    width: 150px;
 }
 
 @media (max-width: 768px) {
