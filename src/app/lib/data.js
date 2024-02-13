@@ -18,8 +18,8 @@ export const getPosts = async () => {
 export const getPost = async (id) => {
     try {
         connectToDb();
-        console.log('slug', id);
-        const post = await Post.findOne({id}).exec();
+        console.log('id', id);
+        const post = await Post.findById({_id: id});
         console.log("post found", post)
         return post;
         

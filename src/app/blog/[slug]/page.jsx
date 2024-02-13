@@ -2,7 +2,7 @@ import styles from "./singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";
 import { Suspense } from "react";
-import { getPost } from "@/app/lib/data";
+import { getPost, getUser } from "@/app/lib/data";
 
 
 // FETCH DATA WITH API
@@ -26,6 +26,7 @@ const SinglePost = async ({params}) => {
 
     // GET DATA WITHOUT API
     const post = await getPost(slug);
+    const user = await getUser(post.userId);
 
     console.log (post);
 
@@ -39,7 +40,7 @@ const SinglePost = async ({params}) => {
             <div className={styles.textContainer}>
                 <Suspense fallback={<div>Loading...</div>}>
                 <h2 className={styles.title}>
-                    {post ? post.title : "Couldn't find the post."}
+                    {post.title}
                 </h2>
                 </Suspense>
                 <div className={styles.details}>
