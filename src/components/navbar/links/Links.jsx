@@ -12,7 +12,7 @@ const Links = () => {
         { title: 'Hjem', path: '/' },
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
-        { title: 'Blogg', path: '/blog' },
+        { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' }
     ];
 

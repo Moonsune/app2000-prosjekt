@@ -1,6 +1,7 @@
 import PostCard from '@/components/postCard/postCard'
 import styles from './blog.module.css'
 import { getPosts } from '../lib/data'
+import { newPost } from '../lib/newPost';
 
 const BlogPage = async () => {
 
@@ -9,7 +10,9 @@ const BlogPage = async () => {
   
     // FETCH DATA WITHOUT AN API
     const posts = await getPosts();
-  
+    
+    // newPost();
+
     return (
       <div className={styles.container}>
         {posts.map((post) => (
