@@ -2,6 +2,7 @@ import { connectToDb } from "./connectToDb";
 import { Post } from "./models";
 import { User } from "./models";
 
+
 export const getPosts = async () => {
     try {
         connectToDb();

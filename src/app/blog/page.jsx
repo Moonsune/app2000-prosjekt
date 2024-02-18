@@ -1,7 +1,6 @@
 import PostCard from '@/components/postCard/postCard'
 import styles from './blog.module.css'
 import { getPosts } from '../lib/data'
-import { newPost } from '../lib/newPost';
 
 const BlogPage = async () => {
 

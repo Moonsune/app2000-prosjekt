@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import styles from "./postUser.module.css";
+import { getUser } from "@/app/lib/data";
 
 // FETCH DATA WTITH API
 //const getData = async (userId) => {
