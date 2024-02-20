@@ -5,6 +5,8 @@ import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css';
 // Assuming `getPosts` is not needed if fetching from an API.
 
+//GPT GENERATED CODE:
+
 const BlogPage = () => {
   const [posts, setPosts] = useState(null);
   const [error, setError] = useState(false);
