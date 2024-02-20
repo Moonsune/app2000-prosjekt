@@ -12,7 +12,7 @@ export const connectToDb = async () => {
         }
         const db = await mongoose.connect(process.env.MONGO);
         connection.isConnected = db.connections[0].readyState;
-        console.log('3');
+        console.log('Using new connection');
 
     }catch (error){
         console.log(error);

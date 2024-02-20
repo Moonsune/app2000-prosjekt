@@ -1,12 +1,13 @@
 import { connectToDb } from "./connectToDb";
 import { Post } from "./models";
 import { User } from "./models";
+import { unstable_noStore as noStore } from "next/cache";
 
 
 export const getPosts = async () => {
     try {
         connectToDb();
-        const posts = await Post.find().exec();
+        const posts = await fetch(Post.find().exec(), {cache: noStore});
         console.log("posts found", posts);
         return posts;
         
@@ -33,12 +34,12 @@ export const getPost = async (id) => {
 export const getUser = async (id) => {
     try {
         connectToDb();
-        const user = await User.findById(id);
+        const user = await (User.findById(id));
         return user;
         
     } catch (error) {
         console.log(error);
-        throw new Error('Error getting user');
+        return "unknown user";
     }
 }
 
