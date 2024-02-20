@@ -22,7 +22,9 @@ const BlogPage = async () => {
     //const posts = await getPosts();
     
     // newPost();
-
+    if (!posts) {
+        return <div>Something went wrong</div>
+    }
     return (
       <div className={styles.container}>
         {posts.map((post) => (
