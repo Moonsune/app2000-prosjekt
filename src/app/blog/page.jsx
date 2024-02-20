@@ -4,7 +4,7 @@ import { getPosts } from '../lib/data'
 
 // FETCH DATA WITH API
 const getData = async () => {
-    const res = await fetch('http://localhost:3000/api/blog', {method: 'GET'});
+    const res = await fetch(process.env.BLOG_PATH, {method: 'GET'});
     if (!res.ok) {
         throw new Error("Something went wrong");
     }  

@@ -10,7 +10,7 @@ import { NextResponse } from "next/server";
 
 // FETCH DATA WITH API
 const getData = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/blog`);
+    const res = await fetch(process.env.BLOG_PATH);
     if (!res.ok) {
         throw new Error("Something went wrong");
     }
