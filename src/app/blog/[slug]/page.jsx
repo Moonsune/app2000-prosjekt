@@ -12,7 +12,8 @@ import { NextResponse } from "next/server";
 const getData = async (slug) => {
     const res = await fetch(process.env.BLOG_PATH);
     if (!res.ok) {
-        throw new Error("Something went wrong");
+        console.log("Something went wrong");
+        return null;
     }
 
     return await Post.findById(slug);

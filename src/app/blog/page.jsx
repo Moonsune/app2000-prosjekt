@@ -6,7 +6,8 @@ import { getPosts } from '../lib/data'
 const getData = async () => {
     const res = await fetch(process.env.BLOG_PATH, {method: 'GET'});
     if (!res.ok) {
-        throw new Error("Something went wrong");
+        console.log ("something went wrong");
+        return null;
     }  
     return res.json();
 }
