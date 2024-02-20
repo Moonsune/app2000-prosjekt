@@ -76,4 +76,7 @@ const SinglePost = async ({params}) => {
     );
 }
 
+// might fix vercel error
+export const revalidate = 0;
+
 export default SinglePost;
