@@ -10,7 +10,7 @@ import { NextResponse } from "next/server";
 
 // FETCH DATA WITH API
 const getData = async (slug) => {
-    const res = await fetch(process.env.BLOG_PATH);
+    const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET'});
     if (!res.ok) {
         console.log("Something went wrong");
         return null;
@@ -75,8 +75,5 @@ const SinglePost = async ({params}) => {
         </div>
     );
 }
-
-// might fix vercel error
-export const revalidate = 0;
 
 export default SinglePost;

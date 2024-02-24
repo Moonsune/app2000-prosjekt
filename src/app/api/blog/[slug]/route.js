@@ -14,8 +14,8 @@ export const GET = async ( req , { params }) => {
         //cache.delete(slug);
         connectToDb();
 
-        const post = await Post.findById({slug});
-        console.log('post', post);
+        const post = await Post.findOne({slug});
+        console.log('Got post: ', post);
         return NextResponse.json(post);
         
     } catch (error) {
@@ -27,12 +27,14 @@ export const GET = async ( req , { params }) => {
 export const DELETE = async ( req , { params }) => {
     
     const {slug} = params;
+    console.log('slug', slug);
+    console.log('req', req);
 
     try {
 
         connectToDb();
 
-        const post = await Post.deleteOne({slug});
+        const post = await Post.findOneAndDelete({slug});
         console.log('post deleted', post);
         return NextResponse.json(post);
 
