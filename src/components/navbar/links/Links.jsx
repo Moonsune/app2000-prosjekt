@@ -1,16 +1,18 @@
-'use client'
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './links.module.css';
+import logOutStyle from './navLink/navLink.module.css';
 import NavLink from './navLink/navLink';
-import { handleLogout } from '@/app/lib/auth';
+import { handleLogout, handleLoginGithub } from '@/app/lib/auth';
 
-const Links = ({session}) => {
+const Links = ({ session }) => {
     const [showMenu, setShowMenu] = useState(false);
     const hamburgerRef = useRef(null);
     const dropdownRef = useRef(null);
-    
-    const isAdmin = false;
+
+    const isAdmin = true;
 
     const links = [
         { title: 'Hjem', path: '/' },
@@ -18,7 +20,7 @@ const Links = ({session}) => {
         { title: 'Kontakt', path: '/contact' },
         { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' },
-        { title: 'logg inn', path: '/login'}
+        { title: 'serverActionTest', path: '/serveractiontest'}
     ];
 
     useEffect(() => {
@@ -55,20 +57,18 @@ const Links = ({session}) => {
             >
                 {links.map(link => (
                     <div key={link.title} onClick={() => setShowMenu(false)}>
-                        <Link href={link.path} key={link.title} />
+                        <NavLink item={link} />
                     </div>
                 ))}
-                { session?.user ? (
+                {session?.user ? (
                     <>
-                        {session.user.isAdmin && <NavLink item={{ title: "Admin", path: "/admin"}} />}
-                        <div onClick={() => setShowMenu(false)}>
-                            <button onClick={handleLogout} style={{color: "white"}}>
-                                Logg ut
-                            </button>
-                        </div>
+                        {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+                        <form action={handleLogout}>
+                            <button onClick={handleLogout} className={logOutStyle.container}>Logg ut</button>
+                        </form>
                     </>
                 ) : (
-                    <NavLink item={{ title: "Logg inn", path: "/login"}} />
+                    <NavLink item={{ title: "Logg inn", path: "/login" }} />
                 )}
             </div>
         </div>

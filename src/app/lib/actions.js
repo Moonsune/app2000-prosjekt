@@ -5,6 +5,10 @@ import { connectToDb } from "./connectToDb";
 import { Post } from "./models";
 import { signIn, signOut } from "next-auth";
 
+const titleToSlug = (title) => {
+    return title.toLowerCase().split(' ').join('-');
+}
+
 
 export const sayHello = async () => {
     "use server";
@@ -45,6 +49,18 @@ export const deletePost = async (formData) => {
     }
 }
 
+export const updatePost = async (formData) => {
+
+    const {id, title, desc} = Object.fromEntries(formData);
+    const slug = titleToSlug(title);
+
+    try {
+        connectToDb();
+        await Post.findByIdAndUpdate(id, {title, desc, slug});
+    } catch (error) {
+        console.log("Error updating post" + error);
+    }
+}
 
 export const handleGithubLogin = async () => {
     "use server";
@@ -54,4 +70,5 @@ export const handleGithubLogin = async () => {
 export const handleLogout = async () => {
     "use server";
     await signOut();
-}
+    console.log('logged out');
+};
