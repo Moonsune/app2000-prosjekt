@@ -12,8 +12,6 @@ const Links = ({ session }) => {
     const hamburgerRef = useRef(null);
     const dropdownRef = useRef(null);
 
-    const isAdmin = true;
-
     const links = [
         { title: 'Hjem', path: '/' },
         { title: 'Om oss', path: '/about' },
@@ -63,7 +61,7 @@ const Links = ({ session }) => {
                 {session?.user ? (
                     <>
                         {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-                        <form action={handleLogout}>
+                        <form>
                             <button onClick={handleLogout} className={logOutStyle.container}>Logg ut</button>
                         </form>
                     </>
