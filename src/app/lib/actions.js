@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDb";
 import { Post } from "./models";
-import { signIn, signOut } from "next-auth";
+import { signIn, signOut } from "@/app/lib/auth";
 
 const titleToSlug = (title) => {
     return title.toLowerCase().split(' ').join('-');
@@ -49,11 +49,11 @@ export const deletePost = async (formData) => {
     }
 }
 
-export const updatePost = async (formData) => {
+export const updatePost = async (id, { title, desc}) => {
 
-    const {id, title, desc} = Object.fromEntries(formData);
+    console.log('updating post', id, title, desc);
     const slug = titleToSlug(title);
-
+    
     try {
         connectToDb();
         await Post.findByIdAndUpdate(id, {title, desc, slug});
@@ -64,11 +64,11 @@ export const updatePost = async (formData) => {
 
 export const handleGithubLogin = async () => {
     "use server";
-    await signIn("github");
+    await signIn('github');
 };
 
 export const handleLogout = async () => {
-    "use server";
-    await signOut();
+    "use client";
+    await signOut('localhost:3000');
     console.log('logged out');
 };

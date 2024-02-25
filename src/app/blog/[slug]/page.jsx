@@ -51,11 +51,11 @@ const SinglePost = async ({params}) => {
                     height={50}
                     width={50}
                     alt=""/>
-                    {/*post && (
+                    {post && (
                     <Suspense fallback={<div>Loading...</div>}>
                         <PostUser userId = {post.userId}/> 
                     </Suspense>
-                    )*/}
+                    )}
                     <div className={styles.detailsText}>
                         <span className={styles.detailTitle}>published </span>
                         <span className={styles.detailValue}>1 hour ago</span>
