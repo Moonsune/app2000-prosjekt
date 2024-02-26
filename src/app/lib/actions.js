@@ -19,7 +19,7 @@ export const addPost = async (formData) => {
 
     const title = formData.get('title');
     const desc = formData.get('desc');
-    const slug = formData.get('slug');
+    const slug = title.toLowerCase().split(' ').join('-');
     const userId = formData.get('userId');
 
     try {
