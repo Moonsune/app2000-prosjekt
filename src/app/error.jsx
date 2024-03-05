@@ -4,7 +4,7 @@ import Link from "next/link";
 const Error = () => {
     return (
         <div>
-            <h1>shit happens</h1>'
+            <h1>shit happens</h1>
             <Link href="/">
                 <p>Go back to home</p>
             </Link>

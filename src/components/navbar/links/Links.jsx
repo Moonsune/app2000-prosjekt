@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './links.module.css';
 import logOutStyle from './navLink/navLink.module.css';
 import NavLink from './navLink/navLink';
-import { handleLogout, handleLoginGithub } from '@/app/lib/auth';
+import { signOut, handleLoginGithub } from '@/app/lib/auth';
 
 const Links = ({ session }) => {
     const [showMenu, setShowMenu] = useState(false);
@@ -62,7 +62,7 @@ const Links = ({ session }) => {
                     <>
                         {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
                         <form>
-                            <button onClick={handleLogout} className={logOutStyle.container}>Logg ut</button>
+                            <button onClick={signOut} className={logOutStyle.container}>Logg ut</button>
                         </form>
                     </>
                 ) : (
