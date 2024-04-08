@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import PostCard from '@/components/postCard/postCard';
+import PostCard from '@/components/menuCard/menuCard';
 import styles from './blog.module.css';
 // Assuming `getPosts` is not needed if fetching from an API.
 
