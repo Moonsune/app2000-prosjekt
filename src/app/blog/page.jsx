@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/menuCard/menuCard';
-import styles from './blog.module.css';
+import styles from './menu.module.css';
 // Assuming `getPosts` is not needed if fetching from an API.
 
 //GPT GENERATED CODE: FIX WHEN TIME
@@ -21,7 +21,7 @@ const BlogPage = () => {
         const data = await res.json();
         setPosts(data);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching menu:', error);
         setError(true);
       }
     };
