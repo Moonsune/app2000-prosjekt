@@ -6,6 +6,8 @@ import styles from './links.module.css';
 import logOutStyle from './navLink/navLink.module.css';
 import NavLink from './navLink/navLink';
 import { signOut, handleLoginGithub } from '@/app/lib/auth';
+import {SessionProvider} from "next-auth/react";
+import LoginLogoutButton from "@/components/loginLogoutButton/LoginLogoutButton";
 
 const Links = ({ session }) => {
     const [showMenu, setShowMenu] = useState(false);
@@ -58,16 +60,9 @@ const Links = ({ session }) => {
                         <NavLink item={link} />
                     </div>
                 ))}
-                {session?.user ? (
-                    <>
-                        {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-                        <form>
-                            <button onClick={signOut} className={logOutStyle.container}>Logg ut</button>
-                        </form>
-                    </>
-                ) : (
-                    <NavLink item={{ title: "Logg inn", path: "/login" }} />
-                )}
+                <SessionProvider>
+                    <LoginLogoutButton />
+                </SessionProvider>
             </div>
         </div>
     );
