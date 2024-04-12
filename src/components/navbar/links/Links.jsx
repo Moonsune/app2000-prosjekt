@@ -18,7 +18,8 @@ const Links = ({ session }) => {
         { title: 'Kontakt', path: '/contact' },
         { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' },
-        { title: 'serverActionTest', path: '/serveractiontest'}
+        { title: 'serverActionTest', path: '/serveractiontest'},
+        { title: 'Handlekurv', path: '/order'}
     ];
 
     useEffect(() => {
