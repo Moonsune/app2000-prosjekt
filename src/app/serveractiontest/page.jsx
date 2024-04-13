@@ -8,7 +8,8 @@ const ServerActionTestPage = () => {
             <form action={addPost} style={{padding:20}}>
                 <input type='text' placeholder='title' name="title"/>
                 <input type='text' placeholder='desc' name='desc'/>
-                <input type='text' placeholder='userId' name="userId"/>
+                <input type='text' placeholder='image URL' name='image-url'/>
+                <input type='text' placeholder='price' name="price"/>
 
                 <button>create</button>
             </form>

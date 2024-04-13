@@ -12,7 +12,7 @@ export const GET = async ( req , { params }) => {
 
     try {
         //cache.delete(slug);
-        connectToDb();
+        await connectToDb();
 
         const post = await Post.findOne({slug});
         console.log('Got post: ', post);
