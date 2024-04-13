@@ -13,14 +13,17 @@ const PostCard = ({post}) => {
         <div className={styles.container}>
             <div className={styles.top}>
                 <div className={styles.imageContainer}>
-                    <Image src='https://cdn.discordapp.com/attachments/1205590313440383037/1205595479413624874/IMG_9537.jpg?ex=65d8f149&is=65c67c49&hm=b9fd9d158c169aaeb8b5c76e3b92e495d997dc222206a0e79faf34f9f8d7ea19&' alt='' fill/>
+                    <Image src='https://cdn.discordapp.com/attachments/1177056771303538778/1226334776798216294/IMG_1755.jpg?ex=66246442&is=6611ef42&hm=acdeb427e1a77524734704d5e260c42653e4299bcf2846480b78fba8fbc21a6e&' alt='' fill/>
                 </div>
-                <span className={styles.date}>4.2.2024</span>
             </div>
             <div className={styles.bottom}>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
-                <Link className={styles.link} href={`/blog/${post._id}`} onClick={console.log(post._id)}> Read more </Link>
+
+                {
+                    //TODO: skal legge inn i handlekurv når du trykker "Bestill")
+                }
+                <button className={styles.link}> Bestill </button>
             </div>
         </div>
     )

@@ -7,7 +7,11 @@ import { getPost, getUser } from "@/app/lib/data";
 import { useRouter } from 'next/navigation'
 import { NextResponse } from "next/server";
 
-
+/**
+ * DEPRECATED
+ * @param slug
+ * @returns {Promise<awaited Query<THydratedDocumentType, THydratedDocumentType, TQueryHelpers, TRawDocType, "findOne"> & TQueryHelpers|null>}
+ */
 // FETCH DATA WITH API
 const getData = async (slug) => {
     const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET'});
@@ -51,16 +55,6 @@ const SinglePost = async ({params}) => {
                     height={50}
                     width={50}
                     alt=""/>
-                    {post && (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <PostUser userId = {post.userId}/> 
-                    </Suspense>
-                    )}
-                    <div className={styles.detailsText}>
-                        <span className={styles.detailTitle}>published </span>
-                        <span className={styles.detailValue}>1 hour ago</span>
-                    </div>
-
                 </div>
                 <div className={styles.content}>
                     <div className={styles.text}>

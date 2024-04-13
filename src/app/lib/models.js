@@ -1,6 +1,10 @@
 import { Timestamp } from 'mongodb';
 import mongoose from 'mongoose';
 
+/**
+ * user schema deprecated
+ * @type {module:mongoose.Schema<any, Model<any, any, any, any>, {}, {}, {}, {}, {timestamps: boolean}, {password: {min: number, type: StringConstructor, required: boolean}, img: {type: StringConstructor}, isAdmin: {default: boolean, type: BooleanConstructor}, email: {max: number, unique: boolean, type: StringConstructor, required: boolean}, username: {min: number, max: number, unique: boolean, type: StringConstructor, required: boolean}}, HydratedDocument<FlatRecord<{password: {min: number, type: StringConstructor, required: boolean}, img: {type: StringConstructor}, isAdmin: {default: boolean, type: BooleanConstructor}, email: {max: number, unique: boolean, type: StringConstructor, required: boolean}, username: {min: number, max: number, unique: boolean, type: StringConstructor, required: boolean}}>, {}>>}
+ */
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -31,6 +35,8 @@ const userSchema = new mongoose.Schema({
 {timestamps: true}
 );
 
+//TODO: refactor to menySchema
+
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -41,10 +47,11 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     img: {
-        type: String
-    },
-    userId: {
         type: String,
+        required: true
+    },
+    price: {
+        type: Number,
         required: true
     },
     slug: {
