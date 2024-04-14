@@ -1,5 +1,5 @@
 import { connectToDb } from "@/app/lib/connectToDb";
-import {Post} from "@/app/lib/models";
+import {Menu} from "@/app/lib/models";
 import { NextResponse } from "next/server";
 import { unstable_noStore as noStore } from "next/cache";
 import { cache } from "react";
@@ -8,9 +8,9 @@ export const GET = async ( req ) => {
     //cache.delete('posts');
     noStore();
     try {
-        connectToDb();
+        await connectToDb();
 
-        const posts = await Post.find();
+        const posts = await Menu.find();
         return NextResponse.json(posts);
         
     } catch (error) {

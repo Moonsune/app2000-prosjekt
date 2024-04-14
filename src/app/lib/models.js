@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
 
 //TODO: refactor to menySchema
 
-const postSchema = new mongoose.Schema({
+const menuSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -64,4 +64,4 @@ const postSchema = new mongoose.Schema({
 );
 
 export const User = mongoose.models.User || mongoose.model('User', userSchema);
-export const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
+export const Menu = mongoose.models.Menu || mongoose.model('Menu', menuSchema);

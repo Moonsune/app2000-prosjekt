@@ -1,5 +1,5 @@
 import { connectToDb } from "@/app/lib/connectToDb";
-import { Post } from "@/app/lib/models";
+import { Menu } from "@/app/lib/models";
 import { NextResponse } from "next/server";
 import { cache } from "react";
 
@@ -14,7 +14,7 @@ export const GET = async ( req , { params }) => {
         //cache.delete(slug);
         await connectToDb();
 
-        const post = await Post.findOne({slug});
+        const post = await Menu.findOne({slug});
         console.log('Got post: ', post);
         return NextResponse.json(post);
         
@@ -34,7 +34,7 @@ export const DELETE = async ( req , { params }) => {
 
         connectToDb();
 
-        const post = await Post.findOneAndDelete({slug});
+        const post = await Menu.findOneAndDelete({slug});
         console.log('post deleted', post);
         return NextResponse.json(post);
 
