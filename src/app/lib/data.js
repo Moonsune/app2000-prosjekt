@@ -1,5 +1,5 @@
 import { connectToDb } from "./connectToDb";
-import { Post } from "./models";
+import { Menu } from "./models";
 import { User } from "./models";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -7,7 +7,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export const getPosts = async () => {
     try {
         connectToDb();
-        const posts = await fetch(Post.find().exec(), {cache: noStore});
+        const posts = await fetch(Menu.find().exec(), {cache: noStore});
         console.log("posts found", posts);
         return posts;
         
@@ -21,7 +21,7 @@ export const getPost = async (id) => {
     try {
         connectToDb();
         console.log('id', id);
-        const post = await Post.findById({_id: id});
+        const post = await Menu.findById({_id: id});
         console.log("post found", post)
         return post;
         

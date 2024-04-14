@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDb";
-import { Post } from "./models";
+import { Menu } from "./models";
 import { signIn, signOut } from "@/app/lib/auth";
 
 const titleToSlug = (title) => {
@@ -19,12 +19,13 @@ export const addPost = async (formData) => {
 
     const title = formData.get('title');
     const desc = formData.get('desc');
+    const img = formData.get('img');
     const slug = title.toLowerCase().split(' ').join('-');
-    const userId = formData.get('userId');
+    const price = formData.get('price');
 
     try {
         connectToDb();
-        const newPost = new Post({title, desc, slug, userId});
+        const newPost = new Menu({title, desc, img, slug, price});
         await newPost.save();
         console.log("post added to db");
         revalidatePath('/blog');
@@ -41,7 +42,7 @@ export const deletePost = async (formData) => {
 
     try {
         connectToDb();
-        await Post.findByIdAndDelete(id);
+        await Menu.findByIdAndDelete(id);
         console.log("post deleted from db");
         //revalidatePath('/blog');
     }catch (error) {
@@ -56,7 +57,7 @@ export const updatePost = async (id, { title, desc}) => {
     
     try {
         connectToDb();
-        await Post.findByIdAndUpdate(id, {title, desc, slug});
+        await Menu.findByIdAndUpdate(id, {title, desc, slug});
     } catch (error) {
         console.log("Error updating post" + error);
     }
