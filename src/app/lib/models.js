@@ -1,6 +1,10 @@
 import { Timestamp } from 'mongodb';
 import mongoose from 'mongoose';
 
+/**
+ * user schema deprecated
+ * @type {module:mongoose.Schema<any, Model<any, any, any, any>, {}, {}, {}, {}, {timestamps: boolean}, {password: {min: number, type: StringConstructor, required: boolean}, img: {type: StringConstructor}, isAdmin: {default: boolean, type: BooleanConstructor}, email: {max: number, unique: boolean, type: StringConstructor, required: boolean}, username: {min: number, max: number, unique: boolean, type: StringConstructor, required: boolean}}, HydratedDocument<FlatRecord<{password: {min: number, type: StringConstructor, required: boolean}, img: {type: StringConstructor}, isAdmin: {default: boolean, type: BooleanConstructor}, email: {max: number, unique: boolean, type: StringConstructor, required: boolean}, username: {min: number, max: number, unique: boolean, type: StringConstructor, required: boolean}}>, {}>>}
+ */
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -31,7 +35,9 @@ const userSchema = new mongoose.Schema({
 {timestamps: true}
 );
 
-const postSchema = new mongoose.Schema({
+//TODO: refactor to menySchema
+
+const menuSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -41,10 +47,11 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     img: {
-        type: String
-    },
-    userId: {
         type: String,
+        required: true
+    },
+    price: {
+        type: Number,
         required: true
     },
     slug: {
@@ -57,4 +64,4 @@ const postSchema = new mongoose.Schema({
 );
 
 export const User = mongoose.models.User || mongoose.model('User', userSchema);
-export const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
+export const Menu = mongoose.models.Menu || mongoose.model('Menu', menuSchema);

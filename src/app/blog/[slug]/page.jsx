@@ -2,12 +2,16 @@ import styles from "./singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";
 import { Suspense } from "react";
-import { Post } from "@/app/lib/models";
+import { Menu } from "@/app/lib/models";
 import { getPost, getUser } from "@/app/lib/data";
 import { useRouter } from 'next/navigation'
 import { NextResponse } from "next/server";
 
-
+/**
+ * DEPRECATED
+ * @param slug
+ * @returns {Promise<awaited Query<THydratedDocumentType, THydratedDocumentType, TQueryHelpers, TRawDocType, "findOne"> & TQueryHelpers|null>}
+ */
 // FETCH DATA WITH API
 const getData = async (slug) => {
     const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET'});
@@ -16,7 +20,7 @@ const getData = async (slug) => {
         return null;
     }
 
-    return await Post.findById(slug);
+    return await Menu.findById(slug);
 }
 
 
@@ -36,7 +40,7 @@ const SinglePost = async ({params}) => {
     return (
         <div className={styles.container}>
             <div className={styles.imgContainer}>
-            <Image className={styles.img} src="https://i.ytimg.com/vi/wtbScEgNgMA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNe7BBkF4Jzn9VAGUjpX7p1upouw"
+            <Image className={styles.img} src={post.img}
             fill 
             alt=""/>
             </div>
@@ -46,22 +50,6 @@ const SinglePost = async ({params}) => {
                         {post.title}
                     </h2>
                 </Suspense>
-                <div className={styles.details}>
-                    <Image className={styles.avatar} src="https://i.ytimg.com/vi/wtbScEgNgMA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNe7BBkF4Jzn9VAGUjpX7p1upouw"
-                    height={50}
-                    width={50}
-                    alt=""/>
-                    {post && (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <PostUser userId = {post.userId}/> 
-                    </Suspense>
-                    )}
-                    <div className={styles.detailsText}>
-                        <span className={styles.detailTitle}>published </span>
-                        <span className={styles.detailValue}>1 hour ago</span>
-                    </div>
-
-                </div>
                 <div className={styles.content}>
                     <div className={styles.text}>
                     {post && (
