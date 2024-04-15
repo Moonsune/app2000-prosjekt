@@ -30,7 +30,7 @@ export const addPost = async (formData) => {
         const newPost = new Menu({title, desc, img, slug, price});
         await newPost.save();
         console.log("post added to db");
-        revalidatePath('/blog');
+        revalidatePath('/menu');
     }catch (error) {
         console.log(error);
 
@@ -46,7 +46,7 @@ export const deletePost = async (formData) => {
         connectToDb();
         await Menu.findByIdAndDelete(id);
         console.log("post deleted from db");
-        //revalidatePath('/blog');
+        //revalidatePath('/menu');
     }catch (error) {
         console.log(error);
     }
