@@ -29,7 +29,7 @@ const PostCard = ({post}) => {
                 {
                     //TODO: skal legge inn i handlekurv når du trykker "Bestill")
                 }
-                <button className={styles.link}> kr {post.price}.- </button>
+                <button className={styles.link} > kr {post.price}.- </button>
             </div>
         </div>
     )
