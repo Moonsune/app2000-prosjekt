@@ -1,4 +1,3 @@
-
 import styles from "./singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";

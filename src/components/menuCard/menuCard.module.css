@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
+  
 }
 
 .top{
@@ -27,7 +28,8 @@
 }
 
 .bottom {
-
+    margin: auto;
+    text-align: center;
 }
 
 .title {
@@ -46,3 +48,18 @@
 .link {
     text-decoration: underline;
 }
+
+.button {
+    
+    background-color: #c2410c; 
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .button:hover {
+    background-color: #fed7aa; 
+  }

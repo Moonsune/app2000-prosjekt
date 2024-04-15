@@ -1,6 +1,11 @@
+"use client";
 import { ArrowRightAltRounded, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Facebook, Phone, Mail, Building, ArrowRightCircle, TruckIcon, Check } from 'lucide-react';
 import styles from "./home.module.css";
+import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
+// pages/index.js
+
+import dynamic from 'next/dynamic';
 
 const Home = () => {
   return (
@@ -85,6 +90,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <CookieConsentBanner />
     </main>
   );
 }

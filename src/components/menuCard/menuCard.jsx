@@ -18,6 +18,7 @@ const  PostCard = ({post}) => {
                 <span className={styles.date}>4.2.2024</span>
             </div>
             <div className={styles.bottom}>
+            <button className={styles.button}>Bestill</button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
                 <Link className={styles.link} href={`/blog/${post._id}`} onClick={console.log(post._id)}> Read more </Link>
