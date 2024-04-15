@@ -1,8 +1,8 @@
 //Laget av Markus Moen Magnussen
 
 import { addPost, deletePost} from '../lib/actions';
-import UpdatePostComponent from '@/components/updatePost/updatePost';
-import MenuDropdownList from "@/components/menuDropdownList/MenuDropdownList";
+import UpdatePostComponent from '@/components/updateMenuItem/updateMenuItem';
+import DeleteDropdownList from "@/components/menuDropdownList/DeleteDropdownList";
 
 const ServerActionTestPage = () => {
 
@@ -21,7 +21,7 @@ const ServerActionTestPage = () => {
                 <UpdatePostComponent />
             </div>
             <div>
-                <MenuDropdownList />
+                <DeleteDropdownList />
             </div>
         </div>
     )

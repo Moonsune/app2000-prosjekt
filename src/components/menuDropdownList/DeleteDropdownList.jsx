@@ -5,7 +5,7 @@ import {Button, FormControl, InputLabel, MenuItem, Select} from '@mui/material';
 import fetchMenuItems from "@/components/menuDropdownList/fetchMenuItems/fetchMenuItems";
 import {deletePost} from "@/app/lib/actions";
 
-const MenuDropdownList = () => {
+const DeleteDropdownList = () => {
     const [items, setItems] = useState([]);
     const [selectedItem, setSelectedItem] = useState('');
     const [loading, setLoading] = useState(true);
@@ -38,13 +38,15 @@ const MenuDropdownList = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <FormControl fullWidth>
-            <InputLabel id="menu-dropdown-label">Select Item</InputLabel>
+        <FormControl
+            fullWidth>
+            <InputLabel id="menu-dropdown-label">Velg Matrett</InputLabel>
             <Select
+                margin="normal"
                 labelId="menu-dropdown-label"
                 id="menu-dropdown-select"
                 value={selectedItem}
-                label="Select Item"
+                label="Velg matrett som skal slettes"
                 onChange={handleChange}
             >
                 {items.map((item) => (
@@ -54,7 +56,9 @@ const MenuDropdownList = () => {
                 ))}
             </Select>
             <Button
+                margin='normal'
                 sx={{
+
                     backgroundColor: '#ff5722', // Custom orange background color
                     color: 'white',             // White text color
                     '&:hover': {
@@ -69,4 +73,4 @@ const MenuDropdownList = () => {
     );
 };
 
-export default MenuDropdownList;
+export default DeleteDropdownList;
