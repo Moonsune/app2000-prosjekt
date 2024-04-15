@@ -2,6 +2,7 @@
 
 import { addPost, deletePost} from '../lib/actions';
 import UpdatePostComponent from '@/components/updatePost/updatePost';
+import MenuDropdownList from "@/components/menuDropdownList/MenuDropdownList";
 
 const ServerActionTestPage = () => {
 
@@ -19,11 +20,9 @@ const ServerActionTestPage = () => {
             <div>
                 <UpdatePostComponent />
             </div>
-
-            <form action={deletePost} style={{padding:20}}>
-                <input type='text' placeholder='id' name='id'/>
-                <button>delete</button>
-            </form>
+            <div>
+                <MenuDropdownList />
+            </div>
         </div>
     )
 };

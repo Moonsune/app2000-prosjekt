@@ -21,7 +21,7 @@ const Links = ({ session }) => {
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
         { title: 'Meny', path: '/menu' },
-        { title: 'serverActionTest', path: '/serveractiontest'}
+        { title: 'Endre Meny', path: '/serveractiontest'}
     ];
 
     useEffect(() => {

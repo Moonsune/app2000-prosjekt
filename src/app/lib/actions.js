@@ -36,15 +36,17 @@ export const addPost = async (formData) => {
 
     }
 }
+/**
+ * function takes the ID of an object stored in database and deletes it
+ * @param item
+ * @returns {Promise<void>}
+ */
+export const deletePost = async (item) => {
 
-export const deletePost = async (formData) => {
-
-
-    const {id} = Object.fromEntries(formData);
-
+    console.log("deleting", item);
     try {
         connectToDb();
-        await Menu.findByIdAndDelete(id);
+        await Menu.findByIdAndDelete(item);
         console.log("post deleted from db");
         //revalidatePath('/menu');
     }catch (error) {
