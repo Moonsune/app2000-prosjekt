@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 "use client"
 import Link from "next/link";
 

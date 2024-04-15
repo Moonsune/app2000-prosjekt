@@ -1,5 +1,7 @@
 "use client";
 
+//Laget av Markus Moen Magnussen
+
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css';

@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const LoginLogoutButton = () => {
