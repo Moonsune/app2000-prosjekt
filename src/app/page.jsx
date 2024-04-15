@@ -1,3 +1,5 @@
+// Laget av Kaisa Lien
+
 import { ArrowRightAltRounded, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Facebook, Phone, Mail, Building, ArrowRightCircle, TruckIcon, Check } from 'lucide-react';
 import styles from "./home.module.css";

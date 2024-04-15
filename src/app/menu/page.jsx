@@ -1,3 +1,4 @@
+// Laget av Markus Moen Magnussen
 
 const Menu = () => {
     return (

@@ -1,6 +1,9 @@
+// Laget av Markus Moen Magnussen
+
 "use client";
 
-import styles from './menuCard.module.css';
+import styles from './postCard.module.css';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
