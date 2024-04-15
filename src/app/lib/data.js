@@ -1,6 +1,10 @@
+// Laget av Markus Moen Magnussen
+
 import { connectToDb } from "./connectToDb";
 import { Menu } from "./models";
 import { User } from "./models";
+
+
 import { unstable_noStore as noStore } from "next/cache";
 
 

@@ -1,3 +1,6 @@
+// Laget av Markus Moen Magnussen
+
+
 import { Suspense } from "react";
 import styles from "./postUser.module.css";
 //import the getUser function from data.js in the lib folder

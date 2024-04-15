@@ -1,3 +1,5 @@
+//Laget av Markus Moen Magnussen
+
 import { addPost, deletePost} from '../lib/actions';
 import UpdatePostComponent from '@/components/updatePost/updatePost';
 

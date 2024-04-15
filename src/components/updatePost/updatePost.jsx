@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 "use client";
 
 import React, { useState } from 'react';
