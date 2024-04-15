@@ -20,7 +20,6 @@ const Links = ({ session }) => {
         { title: 'Hjem', path: '/' },
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
-        { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' },
         { title: 'serverActionTest', path: '/serveractiontest'}
     ];
