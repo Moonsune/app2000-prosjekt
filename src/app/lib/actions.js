@@ -11,12 +11,6 @@ const titleToSlug = (title) => {
     return title.toLowerCase().split(' ').join('-');
 }
 
-
-export const sayHello = async () => {
-    "use server";
-    console.log('Hello, world!');
-};
-
 export const addPost = async (formData) => {
 
     const title = formData.get('title');
