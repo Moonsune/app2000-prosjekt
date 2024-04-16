@@ -7,7 +7,7 @@ const AboutPage = () => {
             <div className="py-12 text-center w-full container bg-orange-300">
                 <p className=" font-bold text-3xl md:text-5xl lg:text-6xl  text-white">Om oss</p>
             </div>
-            <div className="container flex relative items-center py-32 font-semibold bg-orange-100">
+            <div className="container flex relative items-center py-32 font-semibold bg-orange-200">
                 <div className="w-1/2 pt-20 p-20 ">
                     <p className="text-xl md:text-1xl lg:text-2xl text-stone-900 container py-10 ">Vi er en familievennlig restaurant i Bø sentrum. Vi tilbyr pizzamenyer, pizzabuffet m/salater, 
                     à la carte og barnemeny for de minste. Vi har også både inne- og uteservering.</p>
