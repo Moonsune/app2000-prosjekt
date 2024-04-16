@@ -30,8 +30,13 @@ const DeleteDropdownList = () => {
         setSelectedItem(event.target.value);
     };
 
-    const handleButtonClick = () => {
-        deletePost(selectedItem)
+    const handleButtonClick = (e) => {
+        e.preventDefault();
+        if (selectedItem) {
+            deletePost(selectedItem)
+        } else {
+            console.log("har ikke valgt rett: ", selectedItem)
+        }
     }
 
     if (loading) return <div>Loading...</div>;
@@ -59,10 +64,10 @@ const DeleteDropdownList = () => {
                 margin='normal'
                 sx={{
 
-                    backgroundColor: '#ff5722', // Custom orange background color
+                    backgroundColor: '#880808', // Custom orange background color
                     color: 'white',             // White text color
                     '&:hover': {
-                        backgroundColor: '#e64a19' // Darker orange on hover
+                        backgroundColor: 'red' // Darker orange on hover
                     }
                 }}
             onClick={handleButtonClick}>
