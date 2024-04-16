@@ -3,6 +3,11 @@
 import { ArrowRightAltRounded, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Facebook, Phone, Mail, Building, ArrowRightCircle, TruckIcon, Check } from 'lucide-react';
 import styles from "./home.module.css";
+import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
+import Link from 'next/link';
+// pages/index.js
+
+import dynamic from 'next/dynamic';
 
 const Home = () => {
   return (
@@ -13,7 +18,9 @@ const Home = () => {
             <div className="relative">
               <img src="/12.jpg" alt="Image" className="w-full object-cover" style={{ maxWidth: '100%', height: '200px' }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <button className="text-orange-200 px-8 py-4 bg-orange-900 rounded-lg text-xl md:text-4xl lg:text-2xl">Bestill her</button>
+              <Link href="/menu"> 
+                <button className="text-orange-200 px-8 py-4 bg-orange-900 rounded-lg text-xl md:text-4xl lg:text-2xl hover:bg-orange-950 duration-300">Bestill her</button>
+                </Link>
               </div>
             </div>
 
@@ -87,6 +94,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <CookieConsentBanner />
     </main>
   );
 }
