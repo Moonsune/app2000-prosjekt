@@ -60,7 +60,8 @@ const UpdatePostComponent = ({ id }) => {
 
 
     return (
-        <FormControl fullWidth>
+        <FormControl fullWidth
+        margin="dense">
             {/* Input for ID */}
             <InputLabel id="menu-dropdown-label">Velg Matrett</InputLabel>
             <Select

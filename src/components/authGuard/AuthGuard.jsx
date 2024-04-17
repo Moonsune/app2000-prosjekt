@@ -20,5 +20,5 @@ export default function AuthGuard({ children }) {
     }
 
     // Optional: Return a loading state or null while checking authentication status
-    return <div>Loading or not authorized...</div>;
+    return <div>Loading...</div>;
 }

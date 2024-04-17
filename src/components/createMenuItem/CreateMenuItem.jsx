@@ -59,11 +59,11 @@ const CreateMenuItem = ({ id }) => {
 
     }
         return (
-            <FormControl fullWidth>
+            <FormControl fullWidth
+            margin="dense">
                 {/* Input for Title */}
                 <TextField
                     fullWidth
-                    margin="normal"
                     type="text"
                     label="Tittel"
                     placeholder="Tittel"
@@ -75,7 +75,6 @@ const CreateMenuItem = ({ id }) => {
                 {/* Input for Description */}
                 <TextField
                     fullWidth
-                    margin="normal"
                     type="text"
                     label="Beskrivelse"
                     placeholder="Beskrivelse"
@@ -87,7 +86,6 @@ const CreateMenuItem = ({ id }) => {
                 {/* Input for image */}
                 <TextField
                     fullWidth
-                    margin="normal"
                     type="text"
                     label="Bilde"
                     placeholder="URL"
@@ -99,7 +97,6 @@ const CreateMenuItem = ({ id }) => {
                 {/* Input for price large */}
                 <TextField
                     fullWidth
-                    margin="normal"
                     type="text"
                     label="Pris Stor"
                     placeholder=""
@@ -111,7 +108,6 @@ const CreateMenuItem = ({ id }) => {
                 {/* Input for price small */}
                 <TextField
                     fullWidth
-                    margin="normal"
                     type="number"
                     label="Pris Liten"
                     placeholder=""
@@ -122,17 +118,16 @@ const CreateMenuItem = ({ id }) => {
 
                 {/* Submit Button */}
                 <Button
-                    margin='normal'
                     sx={{
 
-                        backgroundColor: '#ff5722', // Custom orange background color
+                        backgroundColor: '#378025', // Custom orange background color
                         color: 'white',             // White text color
                         '&:hover': {
-                            backgroundColor: '#e64a19' // Darker orange on hover
+                            backgroundColor: '#2a6f21' // Darker orange on hover
                         }
                     }}
                     onClick={handleButtonClick}>
-                    Lagre matrett
+                    Lag matrett
                 </Button>
             </FormControl>
         )
