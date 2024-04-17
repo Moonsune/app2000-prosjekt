@@ -11,7 +11,7 @@ export default function AuthGuard({ children }) {
 
         // If not authenticated, redirect to the login page
         if (status !== "authenticated") {
-            signIn( { callbackUrl: '/' }); // Customize the login method and redirect URL as needed
+            signIn( { callbackUrl: process.env.MENU_PATH }); // Customize the login method and redirect URL as needed
         }
     }, [session, status]);
 
