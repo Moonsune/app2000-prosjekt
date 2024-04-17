@@ -19,6 +19,8 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
             return baseUrl + '/'; // Ensure `baseUrl` is correctly determined.
         },
     },
+    site: process.env.NEXT_PUBLIC_BASE_URL,
+
     pages: {
         signIn: '/auth/signin',
     },
