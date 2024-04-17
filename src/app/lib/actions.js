@@ -11,17 +11,23 @@ const titleToSlug = (title) => {
     return title.toLowerCase().split(' ').join('-');
 }
 
-export const addPost = async (formData) => {
+/**
+ * tar inn et JSON objekt som inneholder detaljer for retten
+ * @param item
+ * @returns {Promise<void>}
+ */
+export const addPost = async (item) => {
 
-    const title = formData.get('title');
-    const desc = formData.get('desc');
-    const img = formData.get('img');
+    const title = item.title;
+    const desc = item.desc;
+    const img = item.img;
+    const priceLarge = item.priceLarge;
+    const priceSmall = item.priceSmall;
     const slug = title.toLowerCase().split(' ').join('-');
-    const price = formData.get('price');
 
     try {
         connectToDb();
-        const newPost = new Menu({title, desc, img, slug, price});
+        const newPost = new Menu({title, desc, img, slug, priceLarge, priceSmall});
         await newPost.save();
         console.log("post added to db");
         revalidatePath('/menu');

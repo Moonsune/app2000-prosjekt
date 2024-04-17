@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import {Button, FormControl, InputLabel, MenuItem, Select} from '@mui/material';
-import fetchMenuItems from "@/components/menuDropdownList/fetchMenuItems/fetchMenuItems";
+import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
 import {deletePost} from "@/app/lib/actions";
 
 const DeleteDropdownList = () => {

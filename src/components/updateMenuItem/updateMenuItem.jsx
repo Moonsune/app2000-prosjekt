@@ -5,7 +5,7 @@
 import React, {useEffect, useState} from 'react';
 import {deletePost, updatePost} from '@/app/lib/actions';
 import {TextField, Button, InputLabel, Select, MenuItem, FormControl} from '@mui/material';
-import fetchMenuItems from "@/components/menuDropdownList/fetchMenuItems/fetchMenuItems";
+import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
 
 const UpdatePostComponent = ({ id }) => {
     const [selectedItem, setSelectedItem] = useState('');
