@@ -43,6 +43,16 @@
     width: 90%;
 }
 
-.link {
+.priceDiv {
+    padding: 10px;
+}
+
+.priceLarge {
     text-decoration: underline;
+    float: left;
+}
+
+.priceSmall {
+    text-decoration: underline;
+    float: right;
 }

@@ -1,30 +1,29 @@
 //Laget av Markus Moen Magnussen
-
-import { addPost, deletePost} from '../lib/actions';
+"use client"
+import { addPost, deletePost } from '../lib/actions';
 import UpdatePostComponent from '@/components/updateMenuItem/updateMenuItem';
-import DeleteDropdownList from "@/components/menuDropdownList/DeleteDropdownList";
+import DeleteDropdownList from "@/components/deleteMenuItem/DeleteDropdownList";
+import AuthGuard from "@/components/authGuard/AuthGuard";
+import { SessionProvider } from "next-auth/react";
+import CreateMenuItem from "@/components/createMenuItem/CreateMenuItem";
 
 const ServerActionTestPage = () => {
-
     return (
-        <div>
-            <form action={addPost} style={{padding:20}}>
-                <input type='text' placeholder='title' name="title"/>
-                <input type='text' placeholder='desc' name='desc'/>
-                <input type='text' placeholder='image URL' name='img'/>
-                <input type='text' placeholder='price' name="price"/>
-
-                <button>create</button>
-            </form>
-
-            <div>
-                <UpdatePostComponent />
-            </div>
-            <div>
-                <DeleteDropdownList />
-            </div>
-        </div>
-    )
+        // Wrap the entire component hierarchy under SessionProvider
+        <SessionProvider>
+            <AuthGuard>
+                <div>
+                        <CreateMenuItem />
+                    <div>
+                        <UpdatePostComponent />
+                    </div>
+                    <div>
+                        <DeleteDropdownList />
+                    </div>
+                </div>
+            </AuthGuard>
+        </SessionProvider>
+    );
 };
 
 export default ServerActionTestPage;
