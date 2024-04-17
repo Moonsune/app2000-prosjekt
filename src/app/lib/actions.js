@@ -80,9 +80,3 @@ export const handleGithubLogin = async () => {
     "use server";
     await signIn('github');
 };
-
-export const handleLogout = async () => {
-    "use client";
-    await signOut('localhost:3000');
-    console.log('logged out');
-};
