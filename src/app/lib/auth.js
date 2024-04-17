@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 

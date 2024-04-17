@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 import Link from "next/link";
 
 const NotFound = () => {

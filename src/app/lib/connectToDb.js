@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 const { default: mongoose} = require('mongoose');
 
 const connection = {};

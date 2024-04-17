@@ -1,29 +1,30 @@
-import { addPost, deletePost} from '../lib/actions';
-import UpdatePostComponent from '@/components/updatePost/updatePost';
+//Laget av Markus Moen Magnussen
+"use client"
+import { addPost, deletePost } from '../lib/actions';
+import UpdatePostComponent from '@/components/updateMenuItem/updateMenuItem';
+import DeleteDropdownList from "@/components/deleteMenuItem/DeleteDropdownList";
+import AuthGuard from "@/components/authGuard/AuthGuard";
+import { SessionProvider } from "next-auth/react";
+import CreateMenuItem from "@/components/createMenuItem/CreateMenuItem";
 
 const ServerActionTestPage = () => {
-
     return (
-        <div>
-            <form action={addPost} style={{padding:20}}>
-                <input type='text' placeholder='title' name="title"/>
-                <input type='text' placeholder='desc' name='desc'/>
-                <input type='text' placeholder='image URL' name='img'/>
-                <input type='text' placeholder='price' name="price"/>
-
-                <button>create</button>
-            </form>
-
-            <div>
-                <UpdatePostComponent />
-            </div>
-
-            <form action={deletePost} style={{padding:20}}>
-                <input type='text' placeholder='id' name='id'/>
-                <button>delete</button>
-            </form>
-        </div>
-    )
+        // Alt er satt inn under en session provider sånn at AutgGuard fungerer
+        <SessionProvider>
+            {/*Auth guard sjekker om brukeren er autentisert før de kan endre på menyen*/}
+            <AuthGuard>
+                <div>
+                        <CreateMenuItem />
+                    <div>
+                        <UpdatePostComponent />
+                    </div>
+                    <div>
+                        <DeleteDropdownList />
+                    </div>
+                </div>
+            </AuthGuard>
+        </SessionProvider>
+    );
 };
 
 export default ServerActionTestPage;

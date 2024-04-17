@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 import styles from "./navbar.module.css";
 import Links from "./links/Links";
 import Link from "next/link";

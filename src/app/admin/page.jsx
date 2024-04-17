@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 const AdminPage = () => {
     return (
         <div>AdminPage</div>

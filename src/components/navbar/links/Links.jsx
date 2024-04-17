@@ -1,3 +1,5 @@
+// Laget av Markus Moen Magnussen
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -18,9 +20,8 @@ const Links = ({ session }) => {
         { title: 'Hjem', path: '/' },
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
-        { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' },
-        { title: 'serverActionTest', path: '/serveractiontest'}
+        { title: 'Endre Meny', path: '/serveractiontest'}
     ];
 
     useEffect(() => {
