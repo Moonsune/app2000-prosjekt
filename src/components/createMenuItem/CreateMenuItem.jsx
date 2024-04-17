@@ -132,7 +132,7 @@ const CreateMenuItem = ({ id }) => {
                         }
                     }}
                     onClick={handleButtonClick}>
-                    Oppdater matrett
+                    Lagre matrett
                 </Button>
             </FormControl>
         )

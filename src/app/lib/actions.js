@@ -54,14 +54,23 @@ export const deletePost = async (item) => {
     }
 }
 
-export const updatePost = async (id, { title, desc}) => {
+export const updatePost = async (id, { title, desc, img}) => {
 
-    console.log('updating post', id, title, desc);
+    console.log('updating post', id, title, desc, img);
     const slug = titleToSlug(title);
+    const item = {};
     
     try {
         connectToDb();
-        await Menu.findByIdAndUpdate(id, {title, desc, slug});
+        // sjekker om følgende inneholder data, legger det til i item
+        // oppdaterer bare feltene som inneholder data
+        if (title)
+            item.title = title;
+        if (desc)
+            item.desc = desc;
+        if (img)
+            item.img = img;
+        await Menu.findByIdAndUpdate(id, item);
     } catch (error) {
         console.log("Error updating post" + error);
     }

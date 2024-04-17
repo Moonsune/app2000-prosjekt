@@ -1,3 +1,5 @@
+// laget av Markus Moen Magnussen
+
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -61,13 +63,11 @@ const DeleteDropdownList = () => {
                 ))}
             </Select>
             <Button
-                margin='normal'
                 sx={{
-
-                    backgroundColor: '#880808', // Custom orange background color
-                    color: 'white',             // White text color
+                    backgroundColor: '#880808',
+                    color: 'white',
                     '&:hover': {
-                        backgroundColor: 'red' // Darker orange on hover
+                        backgroundColor: 'red'
                     }
                 }}
             onClick={handleButtonClick}>

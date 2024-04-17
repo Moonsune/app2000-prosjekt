@@ -11,6 +11,7 @@ const UpdatePostComponent = ({ id }) => {
     const [selectedItem, setSelectedItem] = useState('');
     const [currentTitle, setTitle] = useState('');
     const [currentDesc, setDesc] = useState('');
+    const [currentImage, setImage] = useState('');
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -23,7 +24,7 @@ const UpdatePostComponent = ({ id }) => {
                         setTitle(selectedItem.title);
                 if (!currentDesc)
                         setDesc(selectedItem.desc)
-                await updatePost(selectedItem, { title: currentTitle, desc: currentDesc });
+                await updatePost(selectedItem, { title: currentTitle, desc: currentDesc, img: currentImage });
 
                 console.log('Post updated')
             } catch (error) {
@@ -63,7 +64,6 @@ const UpdatePostComponent = ({ id }) => {
             {/* Input for ID */}
             <InputLabel id="menu-dropdown-label">Velg Matrett</InputLabel>
             <Select
-                margin="normal"
                 labelId="menu-dropdown-label"
                 id="menu-dropdown-select"
                 value={selectedItem}
@@ -80,7 +80,6 @@ const UpdatePostComponent = ({ id }) => {
             {/* Input for Title */}
             <TextField
                 fullWidth
-                margin="normal"
                 type="text"
                 label="Title"
                 placeholder="Title"
@@ -92,7 +91,6 @@ const UpdatePostComponent = ({ id }) => {
             {/* Input for Description */}
             <TextField
                 fullWidth
-                margin="normal"
                 type="text"
                 label="Description"
                 placeholder="Description"
@@ -100,10 +98,19 @@ const UpdatePostComponent = ({ id }) => {
                 value={currentDesc}
                 onChange={(e) => setDesc(e.target.value)}
             />
+            {/*bilde*/}
+            <TextField
+                fullWidth
+                type="text"
+                label="Bilde"
+                placeholder="URL"
+                name="img"
+                value={currentImage}
+                onChange={(e) => setImage(e.target.value)}
+            />
 
             {/* Submit Button */}
             <Button
-                margin='normal'
                 sx={{
 
                     backgroundColor: '#ff5722', // Custom orange background color
