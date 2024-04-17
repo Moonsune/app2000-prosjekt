@@ -9,8 +9,9 @@ import CreateMenuItem from "@/components/createMenuItem/CreateMenuItem";
 
 const ServerActionTestPage = () => {
     return (
-        // Wrap the entire component hierarchy under SessionProvider
+        // Alt er satt inn under en session provider sånn at AutgGuard fungerer
         <SessionProvider>
+            {/*Auth guard sjekker om brukeren er autentisert før de kan endre på menyen*/}
             <AuthGuard>
                 <div>
                         <CreateMenuItem />
