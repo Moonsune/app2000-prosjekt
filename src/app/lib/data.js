@@ -32,27 +32,3 @@ export const getPost = async (id) => {
         throw new Error('Error getting post');
     }
 }
-
-export const getUser = async (id) => {
-    try {
-        connectToDb();
-        const user = await (User.findById(id));
-        return user;
-        
-    } catch (error) {
-        console.log(error);
-        return "unknown user";
-    }
-}
-
-export const getUsers = async () => {
-    try {
-        connectToDb();
-        const user = await User.find();
-        return user;
-        
-    } catch (error) {
-        console.log(error);
-        throw new Error('Error getting user');
-    }
-}
