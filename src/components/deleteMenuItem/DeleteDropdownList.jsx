@@ -4,7 +4,6 @@
 
 import React, { useState, useEffect } from 'react';
 import {Button, FormControl, InputLabel, MenuItem, Select, Box} from '@mui/material';
-import {sizing} from '@mui/system';
 import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
 import {deletePost} from "@/app/lib/actions";
 

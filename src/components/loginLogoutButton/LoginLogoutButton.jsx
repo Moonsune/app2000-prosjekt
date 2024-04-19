@@ -5,7 +5,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 const LoginLogoutButton = () => {
     const { data: session, status } = useSession();
 
-    console.log(session)
+
     const handleAuthAction = async () => {
         if (session) {
             // If there's a session, it means the user is logged in, so log them out

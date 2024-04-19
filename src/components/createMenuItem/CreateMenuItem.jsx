@@ -2,35 +2,16 @@
 
 "use client";
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {addPost} from '@/app/lib/actions';
 import {TextField, Button, FormControl} from '@mui/material';
-import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
 
-const CreateMenuItem = ({ id }) => {
+const CreateMenuItem = () => {
     const [currentTitle, setTitle] = useState('');
     const [currentDesc, setDesc] = useState('');
     const [currentImage, setImage] = useState('');
     const [currentPriceLarge, setPriceLarge] = useState('');
     const [currentPriceSmall, setPriceSmall] = useState('');
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const loadItems = async () => {
-            try {
-                const fetchedItems = await fetchMenuItems();
-                setItems(fetchedItems);
-                setLoading(false);
-            } catch (err) {
-                setError(err.message);
-                setLoading(false);
-            }
-        };
-
-        loadItems();
-    }, []);
 
     const handleButtonClick = async (e) => {
         e.preventDefault();
@@ -53,9 +34,6 @@ const CreateMenuItem = ({ id }) => {
         } catch (error) {
             console.error('Error updating post:', error);
         }
-
-        if (loading) return <div>Loading...</div>;
-        if (error) return <div>Error: {error}</div>;
 
     }
         return (
@@ -87,7 +65,7 @@ const CreateMenuItem = ({ id }) => {
                 <TextField
                     fullWidth
                     type="text"
-                    label="Bilde"
+                    label="URL"
                     placeholder="URL"
                     name="img"
                     value={currentImage}
