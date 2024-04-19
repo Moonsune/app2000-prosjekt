@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: { 
-        domains: ["localhost"],
+        domains: ["localhost", "cdn-yams.godt.no"], // Add the hostname here
         remotePatterns: [
             {
                 protocol: 'https',
@@ -21,10 +21,14 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
+                hostname: 'sol.no'
+            },
+            {
+                protocol: 'https',
                 hostname: 'upload.wikimedia.org'
             }
         ],
     }
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

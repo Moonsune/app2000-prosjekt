@@ -16,7 +16,7 @@
 
 }
 
-.img {
+.imageContainer img {
     object-fit: cover;
 }
 

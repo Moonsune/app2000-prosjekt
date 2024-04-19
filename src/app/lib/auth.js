@@ -10,4 +10,3 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
             clientSecret: process.env.GITHUB_SECRET 
         })],
 })
-
