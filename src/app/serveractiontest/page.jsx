@@ -4,7 +4,7 @@
 import UpdatePostComponent from '@/components/updateMenuItem/updateMenuItem';
 import DeleteDropdownList from "@/components/deleteMenuItem/DeleteDropdownList";
 import AuthGuard from "@/components/authGuard/AuthGuard";
-import {getSession, SessionProvider} from "next-auth/react";
+import {SessionProvider} from "next-auth/react";
 import CreateMenuItem from "@/components/createMenuItem/CreateMenuItem";
 
 

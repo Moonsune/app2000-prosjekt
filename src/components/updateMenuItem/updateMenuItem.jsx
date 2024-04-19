@@ -3,11 +3,11 @@
 "use client";
 
 import React, {useEffect, useState} from 'react';
-import {deletePost, updatePost} from '@/app/lib/actions';
+import {updatePost} from '@/app/lib/actions';
 import {TextField, Button, InputLabel, Select, MenuItem, FormControl} from '@mui/material';
 import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
 
-const UpdatePostComponent = ({ id }) => {
+const UpdatePostComponent = () => {
     const [selectedItem, setSelectedItem] = useState('');
     const [currentTitle, setTitle] = useState('');
     const [currentDesc, setDesc] = useState('');
@@ -82,8 +82,8 @@ const UpdatePostComponent = ({ id }) => {
             <TextField
                 fullWidth
                 type="text"
-                label="Title"
-                placeholder="Title"
+                label="Tittel"
+                placeholder="Tittel"
                 name="title"
                 value={currentTitle}
                 onChange={(e) => setTitle(e.target.value)}
@@ -93,8 +93,8 @@ const UpdatePostComponent = ({ id }) => {
             <TextField
                 fullWidth
                 type="text"
-                label="Description"
-                placeholder="Description"
+                label="Beksrivelse"
+                placeholder="Beskrivelse"
                 name="desc"
                 value={currentDesc}
                 onChange={(e) => setDesc(e.target.value)}
@@ -103,7 +103,7 @@ const UpdatePostComponent = ({ id }) => {
             <TextField
                 fullWidth
                 type="text"
-                label="Bilde"
+                label="URL"
                 placeholder="URL"
                 name="img"
                 value={currentImage}
