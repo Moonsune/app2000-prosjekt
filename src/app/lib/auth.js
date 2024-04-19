@@ -22,7 +22,7 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
     site: process.env.NEXT_PUBLIC_BASE_URL,
 
     pages: {
-        signIn: '/serveractiontest',
+        signIn: '/',
     },
     secret: process.env.AUTH_SECRET,
     session: {

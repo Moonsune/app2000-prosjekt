@@ -1,24 +1,27 @@
-import {signIn, useSession} from "next-auth/react";
-import {useRouter} from "next/router";
-import {useEffect} from "react";
+// laget av Markus Moen Magnussen
+
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 export default function AuthGuard({ children }) {
     const { data: session, status } = useSession();
 
     useEffect(() => {
-        // Wait until the session is checked
+        // venter til vi har loadet siden
         if (status === "loading") return;
 
-        // If not authenticated, redirect to the login page
+        // Denne ville da ha redirecta til en standard login-side
         if (status !== "authenticated") {
-            signIn( { callbackUrl: process.env.MENU_PATH }); // Customize the login method and redirect URL as needed
+            alert("Du må logge inn før du kan se denne siden")
+            redirect("http://localhost")
         }
     }, [session, status]);
 
+    // hvis brukeren er autentisert, returnerer vi innholdet i {children}
     if (status === "authenticated") {
-        return children; // Render children when the user is authenticated
+        return children; // children i dette tilfellet, er alle elementer som ligger mellom taggen/komponentet på selve siden
     }
 
-    // Optional: Return a loading state or null while checking authentication status
-    return <div>Loading...</div>;
+    return <div>Vent litt...</div>;
 }
