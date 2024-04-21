@@ -3,6 +3,14 @@
 import mongoose from 'mongoose';
 
 
+const orderHistorySchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    
+})
+
 const menuSchema = new mongoose.Schema({
         title: {
             type: String,

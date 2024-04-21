@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/postCard/postCard';
 import styles from './menu.module.css';
+import {SessionProvider} from "next-auth/react";
 // Assuming `getPosts` is not needed if fetching from an API.
 
 //GPT GENERATED CODE: FIX WHEN TIME
@@ -40,13 +41,15 @@ const BlogPage = () => {
   }
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-        <div className={styles.post} key={post.slug}>
-          <PostCard post={post} />
+      <SessionProvider>
+        <div className={styles.container}>
+            {posts.map((post) => (
+                <div className={styles.post} key={post.slug}>
+                    <PostCard post={post} />
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
+      </SessionProvider>
   );
 };
 

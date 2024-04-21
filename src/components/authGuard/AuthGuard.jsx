@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 export default function AuthGuard({ children }) {
     const { data: session, status } = useSession();
+    console.log(session)
 
     if (status === "loading")
         return <p>Laster</p>;

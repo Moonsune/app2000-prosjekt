@@ -8,9 +8,11 @@ import Link from 'next/link';
 // pages/index.js
 
 import dynamic from 'next/dynamic';
+import {SessionProvider} from "next-auth/react";
 
 const Home = () => {
   return (
+      <SessionProvider>
     <main className="flex min-h-screen flex-col items-center justify-between text-lg md:text-64xl lg:text-6xl font-bold text-white w-full">
       <div className="container mx-auto">
         <div className="flex flex-wrap flex-grow">
@@ -102,6 +104,7 @@ const Home = () => {
       </div>
       <CookieConsentBanner />
     </main>
+      </SessionProvider>
   );
 }
 

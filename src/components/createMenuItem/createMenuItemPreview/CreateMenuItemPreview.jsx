@@ -1,17 +1,17 @@
 // Laget av Markus Moen Magnussen
+
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import styles from './postCard.module.css';
+import styles from '@/components/createMenuItem/createMenuItemPreview/CreateMenuItemPrview.module.css';
 
-const PostCard = ({ post }) => {
+const CreateMenuItemPreview = ({ post }) => {
     const [imgError, setImgError] = useState(false);
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {
             return src;
         } else {
-            return "https://i.ytimg.com/vi/lq7brEFcNiQ/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBfRdZxjRdNftBy-DY9fqB55uOdag";
+            return process.env.NEXT_PUBLIC_IMG;
         }
     }
 
@@ -43,4 +43,4 @@ const PostCard = ({ post }) => {
     );
 };
 
-export default PostCard;
+export default CreateMenuItemPreview;

@@ -4,14 +4,17 @@
 
 import React, {useEffect, useState} from 'react';
 import {updatePost} from '@/app/lib/actions';
-import {TextField, Button, InputLabel, Select, MenuItem, FormControl} from '@mui/material';
+import {TextField, Button, InputLabel, Select, MenuItem, FormControl, Box} from '@mui/material';
 import fetchMenuItems from "@/components/deleteMenuItem/fetchMenuItems/fetchMenuItems";
+import CreateMenuItemPreview from "@/components/createMenuItem/createMenuItemPreview/CreateMenuItemPreview";
 
 const UpdatePostComponent = () => {
     const [selectedItem, setSelectedItem] = useState('');
     const [currentTitle, setTitle] = useState('');
     const [currentDesc, setDesc] = useState('');
     const [currentImage, setImage] = useState('');
+    const [currentPriceSmall, setCurrentPriceSmall] = useState('');
+    const [currentPriceLarge, setCurrentPriceLarge] = useState('');
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,7 +27,7 @@ const UpdatePostComponent = () => {
                         setTitle(selectedItem.title);
                 if (!currentDesc)
                         setDesc(selectedItem.desc)
-                await updatePost(selectedItem, { title: currentTitle, desc: currentDesc, img: currentImage });
+                await updatePost(selectedItem, { title: currentTitle, desc: currentDesc, img: currentImage, priceSmall: currentPriceSmall, priceLarge: currentPriceLarge });
 
                 console.log('Post updated')
             } catch (error) {
@@ -41,6 +44,7 @@ const UpdatePostComponent = () => {
             try {
                 const fetchedItems = await fetchMenuItems();
                 setItems(fetchedItems);
+                console.log(currentDesc)
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -49,7 +53,7 @@ const UpdatePostComponent = () => {
         };
 
         loadItems();
-    }, []);
+    }, [currentDesc]);
 
     const handleChange = (event) => {
         setSelectedItem(event.target.value);
@@ -93,7 +97,7 @@ const UpdatePostComponent = () => {
             <TextField
                 fullWidth
                 type="text"
-                label="Beksrivelse"
+                label="Beskrivelse"
                 placeholder="Beskrivelse"
                 name="desc"
                 value={currentDesc}
@@ -123,6 +127,9 @@ const UpdatePostComponent = () => {
                 onClick={handleButtonClick}>
                 Oppdater matrett
             </Button>
+            <Box>
+                <CreateMenuItemPreview post={{title: currentTitle, desc: currentDesc, img: currentImage}} />
+            </Box>
         </FormControl>
     );
 };
