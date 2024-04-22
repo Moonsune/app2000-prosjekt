@@ -14,7 +14,6 @@ const CartPage = () => {
 
     return (
         <div>
-            <h1>Handlekurv:</h1>
             <Cart cartItems={cartItems} />
         </div>
     );
