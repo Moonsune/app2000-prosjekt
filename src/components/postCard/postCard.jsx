@@ -1,4 +1,5 @@
-// postCard/postCard.jsx
+// PostCard.jsx
+
 import React, { useState } from 'react';
 import styles from './postCard.module.css';
 import Image from 'next/image';

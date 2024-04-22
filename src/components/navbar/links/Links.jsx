@@ -21,7 +21,7 @@ const Links = ({ session }) => {
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
         { title: 'Meny', path: '/menu' },
-        { title: 'Handlekurv', path: '/menuCart'},
+        { title: 'Handlekurv', path: '/cartpage'},
         { title: 'Endre Meny', path: '/serveractiontest'}
     ];
 
