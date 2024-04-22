@@ -8,7 +8,7 @@ const PostCard = ({ post, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
-    addToCart({ ...post, quantity });
+    addToCart({ ...post, quantity:1});
   };
 
   return (
@@ -21,15 +21,10 @@ const PostCard = ({ post, addToCart }) => {
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.text}>{post.desc}</p>
+        <p className={styles.text}>{post.price}.-</p>
         <div className={styles.action}>
-          <input
-            type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(parseInt(e.target.value))}
-            min={1}
-          />
           <button className={styles.orderButton} onClick={handleAddToCart}>
-            Bestill kr {post.price}.-
+            Bestill
           </button>
         </div>
       </div>

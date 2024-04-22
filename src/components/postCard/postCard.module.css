@@ -46,3 +46,14 @@
 .link {
     text-decoration: underline;
 }
+
+.orderButton {
+    background-color: #c2410c;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.orderButton:hover {
+    background-color: #9a3412;
+    transition: 0.3s;
+}
