@@ -11,46 +11,53 @@ import {SessionProvider} from "next-auth/react";
 //GPT GENERATED CODE: FIX WHEN TIME
 
 const BlogPage = () => {
-  const [posts, setPosts] = useState(null);
-  const [error, setError] = useState(false);
+    const [posts, setPosts] = useState(null);
+    const [error, setError] = useState(false);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET' });
-        if (!res.ok) {
-          throw new Error('Failed to fetch', res.status, res.statusText);
-        }
-        const data = await res.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setError(true);
-      }
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET' });
+                if (!res.ok) {
+                    throw new Error('Failed to fetch', res.status, res.statusText);
+                }
+                const data = await res.json();
+                setPosts(data);
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+                setError(true);
+            }
+        };
+
+        getData();
+    }, []);
+
+    const addToCart = (item) => {
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const updatedCartItems = [...storedCartItems, item];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        console.log('Item added to cart:', item);
     };
 
-    getData();
-  }, []); // The empty array means this effect runs once on mount.
+    if (error) {
+        return <div>Something went wrong</div>;
+    }
 
-  if (error) {
-    return <div>Something went wrong</div>;
-  }
+    if (!posts) {
+        return <div>Loading...</div>;
+    }
 
-  if (!posts) {
-    return <div>Loading...</div>; // or any loading state
-  }
-
-  return (
-      <SessionProvider>
-        <div className={styles.container}>
-            {posts.map((post) => (
-                <div className={styles.post} key={post.slug}>
-                    <PostCard post={post} />
-                </div>
-            ))}
-        </div>
-      </SessionProvider>
-  );
+    return (
+        <SessionProvider>
+            <div className={styles.container}>
+                {posts.map((post) => (
+                    <div className={styles.post} key={post.slug}>
+                        <PostCard post={post} addToCart={addToCart} />
+                    </div>
+                ))}
+            </div>
+        </SessionProvider>
+    );
 };
 
 export default BlogPage;

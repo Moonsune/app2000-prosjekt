@@ -1,11 +1,14 @@
 // Laget av Markus Moen Magnussen
-import { useState } from 'react';
+
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './postCard.module.css';
 
-const PostCard = ({ post }) => {
-    const [imgError, setImgError] = useState(false);
+const PostCard = ({ post, addToCart }) => {
+  const [quantity, setQuantity] = useState(1);
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {
@@ -14,6 +17,9 @@ const PostCard = ({ post }) => {
             return "https://i.ytimg.com/vi/lq7brEFcNiQ/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBfRdZxjRdNftBy-DY9fqB55uOdag";
         }
     }
+  const handleAddToCart = () => {
+    addToCart({ ...post, quantity:1});
+  };
 
     return (
         <div className={styles.container}>
@@ -35,8 +41,8 @@ const PostCard = ({ post }) => {
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
                 <div className={styles.priceDiv}>
-                    <button className={styles.priceLarge}>Stor kr {post.priceLarge}.-</button>
-                    <button className={styles.priceSmall}>Liten kr {post.priceSmall}.-</button>
+                    <button className={styles.orderButton} onClick={handleAddToCart}>Stor kr {post.priceLarge}.-</button>
+                    <button className={styles.orderButton} onClick={handleAddToCart}>Liten kr {post.priceSmall}.-</button>
                 </div>
             </div>
         </div>

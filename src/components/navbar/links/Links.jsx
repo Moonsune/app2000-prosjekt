@@ -19,7 +19,8 @@ const Links = () => {
         { title: 'Kontakt', path: '/contact' },
         { title: 'Meny', path: '/menu' },
         { title: 'Endre Meny', path: '/endremeny'},
-        { title: 'Logg Inn', path: '/signin'}
+        { title: 'Handlekurv', path: '/cartpage'},
+        { title: 'Logg Inn', path: '/signin'},
     ];
 
     useEffect(() => {
