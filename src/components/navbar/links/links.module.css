@@ -1,7 +1,7 @@
 .links {
     display: flex;
     align-items: center;
-    gap: 10px; /* Add gap between links on large screens */
+    gap: 10px; 
     position: relative;
 }
 
@@ -24,9 +24,7 @@
 }
 
 .hamburger {
-    cursor: pointer;
-    position: absolute;
-    right: 30px;
+
     display: none; /* Initially hide on large screens */
 }
 
@@ -48,40 +46,40 @@
     .linksContainer.showOnSmall {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* Add gap between links on small screens */
+        gap: 10px; 
         position: absolute;
-        top: 50px; /* Adjust the top position as needed */
+        top: 50px; 
         right: 0;
-        background-color: rgb(19, 14, 14); /* Add a background color for better visibility */
+        background-color: rgb(19, 14, 14); 
         padding: 10px;
-        border: 1px solid #2b2121; /* Add border for better visibility */
+        border: 1px solid #2b2121; 
         z-index: 50;
     }
 
     .hamburger {
-        display: block; /* Show the hamburger icon on small screens */
+        display: block; 
     }
 
     .hamburger.showOnSmall {
-        display: block; /* Show the hamburger icon on small screens */
+        display: block; 
     }
 
     .hamburger.hideOnLarge {
-        display: none; /* Hide the hamburger icon on larger screens */
+        display: none; 
     }
 
     .linksContainer.hideOnSmall {
-        display: none; /* Hide the links on small screens */
+        display: none; 
     }
 }
 
 @media (min-width: 768px) {
     .linksContainer {
-        display: flex; /* Show the links on large screens */
-        gap: 10px; /* Add gap between links on large screens */
+        display: flex; 
+        gap: 10px; 
     }
 
     .hamburger {
-        display: none; /* Hide the hamburger icon on large screens */
+        display: none;
     }
 }

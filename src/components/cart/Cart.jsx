@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styles from './Cart.module.css';
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, removeFromCart, clearCart }) => {
     const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
 
     return (
@@ -14,6 +14,7 @@ const Cart = ({ cartItems }) => {
                             <p>Title: {item.title}</p>
                             <p>Description: {item.desc}</p>
                             <p>{item.name} {item.price}kr</p>
+                            <button onClick={() => removeFromCart(index)} className={styles.cartButton}>Fjern</button>
                         </li>
                     ))}
                 </ul>
@@ -21,6 +22,7 @@ const Cart = ({ cartItems }) => {
                 <p>Handlekurven er tom</p>
             )}
             <p className={styles.cartTotal}>Sum: {totalPrice}kr</p>
+            <button onClick={clearCart} className={styles.cartButton}>Tøm handlekurven</button>
         </div>
     );
 };

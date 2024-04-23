@@ -1,16 +1,12 @@
 /* cart.module.css */
 .cartContainer {
     text-align: center;
-    width: 50%;
-    color: black;
+    color: #1f2937;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     gap: 20px;
     font-weight: 500;
-
   }
   
   .cartItem {
@@ -19,7 +15,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    color: black;
+    color: #1f2937;
 
   }
   
@@ -27,6 +23,9 @@
     margin-top: 20px;
     font-weight: bold;
     font-size: 18px;
-    color: black;
+    color: #1f2937;
   }
   
+  .cartButton {
+    text-decoration: underline;
+  }
