@@ -4,8 +4,8 @@
 
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDb";
-import { Menu } from "./models";
-import { signIn, signOut } from "@/app/lib/auth";
+import {Booking, Menu} from "./models";
+import { signIn } from "@/app/lib/auth";
 
 const titleToSlug = (title) => {
     return title.toLowerCase().split(' ').join('-');
@@ -33,6 +33,32 @@ export const addPost = async (item) => {
         revalidatePath('/menu');
     }catch (error) {
         console.log(error);
+
+    }
+}
+
+/**
+ * oppretter ny booking
+ * @param item
+ * @returns {Promise<boolean>}
+ */
+export const nyBooking = async (item) => {
+    // TODO: implementer sjekk for dobbeltbooking
+    const epost = item.epost;
+    const dato = item.dato;
+    const tid = item.tid;
+    const antall = item.antall;
+    const slug = (item.epost, "-", dato, tid);
+
+    try {
+        connectToDb();
+        const newBooking = new Booking({ epost, dato, tid, antall, slug});
+        await newBooking.save();
+        console.log("Booking added to db");
+        return true;
+    }catch (error) {
+        console.log(error);
+        return false;
 
     }
 }
@@ -80,3 +106,15 @@ export const handleGithubLogin = async () => {
     "use server";
     await signIn('github');
 };
+
+export const handleBookingRequest = async (type, email, time, contents) => {
+    "use server";
+    const henvendelseJSON = {type: type, email: email, time: time, content: contents};
+    try {
+        // TODO: legg til logikk for å legge til
+        await connectToDb();
+
+    } catch (e) {
+        console.log(e);
+    }
+}

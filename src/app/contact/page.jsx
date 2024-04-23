@@ -3,11 +3,14 @@
 "use client";
 import Link from "next/link";
 import { Facebook, Phone, Mail, Building } from 'lucide-react';
+import {SessionProvider} from "next-auth/react";
+import BookingForm from "@/components/contactForm/BookingForm";
 
 const ContactPage = () => {
     console.log('test');
     return (
         <>
+            <SessionProvider>
             <div className="container my-24 mx-auto md:px-8">
                 <section className="mb-32">
                     <div className="flex justify-center">
@@ -84,6 +87,10 @@ const ContactPage = () => {
                     </div>
                 </section>
             </div>
+            <div>
+                <BookingForm />
+            </div>
+            </SessionProvider>
         </>
     );
 }

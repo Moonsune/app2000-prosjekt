@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import styles from './about.module.css';
+import {SessionProvider} from "next-auth/react";
 
 const AboutPage = () => {
     return (
+        <SessionProvider>
         <main className="flex min-h-screen flex-col items-center text-lg md:text-64xl lg:text-6xl text-white w-full font-montserrat">
             <div className="py-12 text-center w-full container bg-orange-300">
                 <p className=" font-bold text-3xl md:text-5xl lg:text-6xl  text-white">Om oss</p>
@@ -17,6 +19,7 @@ const AboutPage = () => {
                 <img src="/Pizzafjoset.jpg" alt="Image" className="h-96 m-auto" />
             </div>
         </main>
+        </SessionProvider>
     )
 };
 

@@ -85,7 +85,7 @@ const UpdatePostComponent = () => {
             {/* Input for Title */}
             <TextField
                 fullWidth
-                type="text"
+                type="email"
                 label="Tittel"
                 placeholder="Tittel"
                 name="title"
