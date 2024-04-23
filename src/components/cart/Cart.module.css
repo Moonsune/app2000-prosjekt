@@ -29,3 +29,9 @@
   .cartButton {
     text-decoration: underline;
   }
+
+  .cartTopText {
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }

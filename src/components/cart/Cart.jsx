@@ -8,7 +8,7 @@ const Cart = ({ cartItems, removeFromCart, clearCart }) => {
         <div className ={styles.cartContainer}>
             {cartItems.length > 0 ? (
                 <ul className={styles.cartList}>
-                                <h1>Handlekurv:</h1>
+                                <h1 className={styles.cartTopText}>Handlekurv:</h1>
                     {cartItems.map((item, index) => (
                         <li key={index} className={styles.cartItem}>
                             <p>Title: {item.title}</p>

@@ -26,11 +26,11 @@ const CartPage = () => {
 
     return (
         <div className="container mx-auto bg-white">
-            <div className="grid grid-cols-2 gap-4">
-                <div className="col-span-1 mt-auto mb-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="md:col-span-1 mt-auto mb-auto">
                     <Cart cartItems={cartItems} removeFromCart={removeFromCart} clearCart={clearCart} />
                 </div>
-                <div className="col-span-1 mt-10 mb-10 mr-5 ml-5">
+                <div className="md:col-span-1 mt-10 mb-10 mr-5 ml-5">
                 <form class="w-full">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
