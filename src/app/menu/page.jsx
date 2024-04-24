@@ -32,6 +32,13 @@ const BlogPage = () => {
     getData();
   }, []); // The empty array means this effect runs once on mount.
 
+  const addToCart = (item) => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const updatedCartItems = [...storedCartItems, item];
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    console.log('Item added to cart:', item);
+};
+
   if (error) {
     return <div>Something went wrong</div>;
   }
@@ -42,14 +49,14 @@ const BlogPage = () => {
 
   return (
       <SessionProvider>
-        <div className={styles.container}>
-            {posts.map((post) => (
-                <div className={styles.post} key={post.slug}>
-                    <PostCard post={post} />
-                </div>
-            ))}
-        </div>
-      </SessionProvider>
+      <div className={styles.container}>
+          {posts.map((post) => (
+              <div className={styles.post} key={post.slug}>
+                  <PostCard post={post} addToCart={addToCart} />
+              </div>
+          ))}
+      </div>
+  </SessionProvider>
   );
 };
 

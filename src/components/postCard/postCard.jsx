@@ -1,11 +1,9 @@
-// Laget av Markus Moen Magnussen
-import { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './postCard.module.css';
 
-const PostCard = ({ post }) => {
-    const [imgError, setImgError] = useState(false);
+const PostCard = ({ post, addToCart, price }) => {
+    const [imgError, setImgError] = React.useState(false);
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {
@@ -14,6 +12,10 @@ const PostCard = ({ post }) => {
             return "https://i.ytimg.com/vi/lq7brEFcNiQ/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBfRdZxjRdNftBy-DY9fqB55uOdag";
         }
     }
+
+    const handleAddToCart = (selectedPrice) => {
+        addToCart({ ...post, quantity: 1, selectedPrice: selectedPrice });
+    };
 
     return (
         <div className={styles.container}>
@@ -27,7 +29,7 @@ const PostCard = ({ post }) => {
                             onError={() => setImgError(true)}
                         />
                     ) : (
-                        <div>No image available</div> // Display this when the image fails to load
+                        <div>No image available</div>
                     )}
                 </div>
             </div>
@@ -35,8 +37,8 @@ const PostCard = ({ post }) => {
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
                 <div className={styles.priceDiv}>
-                    <button className={styles.priceLarge}>Stor kr {post.priceLarge}.-</button>
-                    <button className={styles.priceSmall}>Liten kr {post.priceSmall}.-</button>
+                    <button className={styles.priceLarge} onClick={() => handleAddToCart(post.priceLarge)}>Stor - kr {post.priceLarge}.-</button>
+                    <button className={styles.priceSmall} onClick={() => handleAddToCart(post.priceSmall)}>Liten - kr {post.priceSmall}.-</button>
                 </div>
             </div>
         </div>
