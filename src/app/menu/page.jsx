@@ -11,8 +11,8 @@ import {SessionProvider} from "next-auth/react";
 //GPT GENERATED CODE: FIX WHEN TIME
 
 const BlogPage = () => {
-    const [posts, setPosts] = useState(null);
-    const [error, setError] = useState(false);
+  const [posts, setPosts] = useState(null);
+  const [error, setError] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
@@ -29,35 +29,35 @@ const BlogPage = () => {
             }
         };
 
-        getData();
-    }, []);
+    getData();
+  }, []); // The empty array means this effect runs once on mount.
 
-    const addToCart = (item) => {
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const updatedCartItems = [...storedCartItems, item];
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-        console.log('Item added to cart:', item);
-    };
+  const addToCart = (item) => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const updatedCartItems = [...storedCartItems, item];
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    console.log('Item added to cart:', item);
+};
 
-    if (error) {
-        return <div>Something went wrong</div>;
-    }
+  if (error) {
+    return <div>Something went wrong</div>;
+  }
 
-    if (!posts) {
-        return <div>Loading...</div>;
-    }
+  if (!posts) {
+    return <div>Loading...</div>;
+  }
 
-    return (
-        <SessionProvider>
-            <div className={styles.container}>
-                {posts.map((post) => (
-                    <div className={styles.post} key={post.slug}>
-                        <PostCard post={post} addToCart={addToCart} />
-                    </div>
-                ))}
-            </div>
-        </SessionProvider>
-    );
+  return (
+      <SessionProvider>
+      <div className={styles.container}>
+          {posts.map((post) => (
+              <div className={styles.post} key={post.slug}>
+                  <PostCard post={post} addToCart={addToCart} />
+              </div>
+          ))}
+      </div>
+  </SessionProvider>
+  );
 };
 
 export default BlogPage;
