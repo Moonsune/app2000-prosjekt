@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Cart from '@/components/cart/Cart';
+import styles from './cartpage.module.css';
 
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
