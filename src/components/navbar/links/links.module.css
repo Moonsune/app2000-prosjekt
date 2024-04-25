@@ -1,7 +1,7 @@
 .links {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px; /* Add gap between links on large screens */
     position: relative;
 }
 
@@ -24,7 +24,9 @@
 }
 
 .hamburger {
-
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
     display: none; /* Initially hide on large screens */
 }
 
@@ -46,40 +48,40 @@
     .linksContainer.showOnSmall {
         display: flex;
         flex-direction: column;
-        gap: 10px; 
+        gap: 10px; /* Add gap between links on small screens */
         position: absolute;
-        top: 50px; 
+        top: 50px; /* Adjust the top position as needed */
         right: 0;
-        background-color: rgb(19, 14, 14); 
+        background-color: rgb(19, 14, 14); /* Add a background color for better visibility */
         padding: 10px;
-        border: 1px solid #2b2121; 
+        border: 1px solid #2b2121; /* Add border for better visibility */
         z-index: 50;
     }
 
     .hamburger {
-        display: block; 
+        display: block; /* Show the hamburger icon on small screens */
     }
 
     .hamburger.showOnSmall {
-        display: block; 
+        display: block; /* Show the hamburger icon on small screens */
     }
 
     .hamburger.hideOnLarge {
-        display: none; 
+        display: none; /* Hide the hamburger icon on larger screens */
     }
 
     .linksContainer.hideOnSmall {
-        display: none; 
+        display: none; /* Hide the links on small screens */
     }
 }
 
 @media (min-width: 768px) {
     .linksContainer {
-        display: flex; 
-        gap: 10px; 
+        display: flex; /* Show the links on large screens */
+        gap: 10px; /* Add gap between links on large screens */
     }
 
     .hamburger {
-        display: none;
+        display: none; /* Hide the hamburger icon on large screens */
     }
 }

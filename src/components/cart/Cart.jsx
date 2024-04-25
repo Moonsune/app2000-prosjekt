@@ -1,11 +1,8 @@
-"use client"
-
 import React from 'react';
 import styles from './Cart.module.css';
-import {connectToDb} from "@/app/lib/connectToDb";
-import {addOrder} from "@/app/lib/actions";
+
 const Cart = ({ cartItems, removeFromCart, clearCart }) => {
-    const totalPrice = cartItems.reduce((total, item) => total + (item.post.selectedPrice * item.quantity), 0);
+    const totalPrice = cartItems.reduce((total, item) => total + (item.selectedPrice * item.quantity), 0);
 
     return (
         <div className={styles.cartContainer}>
@@ -14,9 +11,9 @@ const Cart = ({ cartItems, removeFromCart, clearCart }) => {
                     <h1 className={styles.cartTopText}>Handlekurv:</h1>
                     {cartItems.map((item, index) => (
                         <li key={index} className={styles.cartItem}>
-                            <p>Tittel: {item.post.title}</p>
-                            <p>Innhold: {item.post.desc}</p>
-                            <p>{item.post.selectedPrice} {item.post.name}kr </p>
+                            <p>Tittel: {item.title}</p>
+                            <p>Innhold: {item.desc}</p>
+                            <p>{item.selectedPrice === item.priceLarge ? "Stor -" : "Liten -"} {item.name} {item.selectedPrice}kr </p>
                             <button onClick={() => removeFromCart(index)} className={styles.cartButton}>Fjern</button>
                         </li>
                     ))}

@@ -4,48 +4,12 @@
 
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDb";
-import {Booking, Menu, Order, OrderHistory} from "./models";
+import {Booking, Menu} from "./models";
 import { signIn } from "@/app/lib/auth";
 
 const titleToSlug = (title) => {
     return title.toLowerCase().split(' ').join('-');
 }
-
-// TODO: Denne må også egentlig ta brukerdata for å vite hvem som har bestilt :<)
-export const addOrder = async (items) => {
-    let orderList = [];
-    try {
-        items.forEach(item => {
-            const post = item.post;
-            const amt = item.quantity;
-            const size = item.size;
-            const newOrder = new Order({
-                title: post.title,
-                desc: post.desc,
-                price: post.selectedPrice,
-                slug: post.slug,
-                qty: amt,
-                size: size });
-            orderList.push(newOrder);
-
-        });
-        console.log(orderList.length);
-        if (orderList.length) {
-            console.log(orderList)
-            await connectToDb();
-            // Siden orderHistory tar en array med JSON-objekter, må hver item wrappes inn i et eget objekt
-            let ordersList = new OrderHistory({
-                items: orderList,
-            });
-            // TODO: uncomment
-            await ordersList.save();
-            console.log('Order created');
-        }
-    } catch (error) {
-        console.error("Error creating order:", error);
-    }
-}
-
 
 /**
  * tar inn et JSON objekt som inneholder detaljer for retten
@@ -53,7 +17,7 @@ export const addOrder = async (items) => {
  * @returns {Promise<void>}
  */
 export const addPost = async (item) => {
-    "use server";
+
     const title = item.title;
     const desc = item.desc;
     const img = item.img;
@@ -62,7 +26,7 @@ export const addPost = async (item) => {
     const slug = title.toLowerCase().split(' ').join('-');
 
     try {
-        await connectToDb();
+        connectToDb();
         const newPost = new Menu({title, desc, img, slug, priceLarge, priceSmall});
         await newPost.save();
         console.log("post added to db");

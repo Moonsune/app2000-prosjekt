@@ -14,20 +14,20 @@ const BlogPage = () => {
   const [posts, setPosts] = useState(null);
   const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET' });
-                if (!res.ok) {
-                    throw new Error('Failed to fetch', res.status, res.statusText);
-                }
-                const data = await res.json();
-                setPosts(data);
-            } catch (error) {
-                console.error('Error fetching posts:', error);
-                setError(true);
-            }
-        };
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET' });
+        if (!res.ok) {
+          throw new Error('Failed to fetch', res.status, res.statusText);
+        }
+        const data = await res.json();
+        setPosts(data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setError(true);
+      }
+    };
 
     getData();
   }, []); // The empty array means this effect runs once on mount.
@@ -44,7 +44,7 @@ const BlogPage = () => {
   }
 
   if (!posts) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // or any loading state
   }
 
   return (
