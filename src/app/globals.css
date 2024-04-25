@@ -26,7 +26,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   display: flex;
-  justify-content: center; /* Horizontally center content */
+  justify-content: center; 
 }
 
 a {
