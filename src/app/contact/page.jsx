@@ -2,7 +2,7 @@
 
 "use client";
 import Link from "next/link";
-import { Facebook, Phone, Mail, Building } from 'lucide-react';
+import { Phone, Mail, Building } from 'lucide-react';
 import {SessionProvider} from "next-auth/react";
 import BookingForm from "@/components/contactForm/BookingForm";
 

@@ -1,13 +1,8 @@
 // Laget av Kaisa Lien
 
-import { ArrowRightAltRounded, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
-import { Facebook, Phone, Mail, Building, ArrowRightCircle, TruckIcon, Check } from 'lucide-react';
-import styles from "./home.module.css";
+import {ArrowRightCircle, TruckIcon, Check } from 'lucide-react';
 import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
 import Link from 'next/link';
-// pages/index.js
-
-import dynamic from 'next/dynamic';
 import {SessionProvider} from "next-auth/react";
 
 const Home = () => {
