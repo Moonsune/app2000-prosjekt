@@ -17,7 +17,7 @@
 
 }
 
-.img {
+.imageContainer img {
     object-fit: cover;
 }
 
@@ -46,7 +46,7 @@
 
 .priceLarge, .priceSmall {
     text-decoration: underline;
-    float: right;    
+    float: right;
     background-color: #c2410c;
     border-radius: 15px;
     padding: 10px;
