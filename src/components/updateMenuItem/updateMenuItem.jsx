@@ -101,6 +101,9 @@ const UpdatePostComponent = () => {
                 placeholder="Beskrivelse"
                 name="desc"
                 value={currentDesc}
+                inputProps = {{
+                    autoComplete: "off"
+                }}
                 onChange={(e) => setDesc(e.target.value)}
             />
             {/*bilde*/}
