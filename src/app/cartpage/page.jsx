@@ -1,4 +1,7 @@
 "use client";
+/*
+    Laget av Kaisa Lien
+ */
 import React, { useState, useEffect } from 'react';
 import Cart from '@/components/cart/Cart';
 import styles from './cartpage.module.css';

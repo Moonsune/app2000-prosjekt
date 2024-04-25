@@ -1,5 +1,7 @@
 "use client";
-
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */
 import Link from 'next/link';
 import styles from './navLink.module.css';
 import { usePathname } from 'next/navigation';

@@ -1,4 +1,4 @@
-// Laget av Markus Moen Magnussen
+// Laget av Markus Moen Magnussen og Kaisa Lien
 
 "use client";
 import Link from "next/link";
@@ -20,7 +20,6 @@ const ContactPage = () => {
                     </div>
 
                     <div className="flex flex-wrap">
-                        {/* Contact Information */}
                         <div className="w-full sm:w-1/2 lg:w-1/2 mb-12 md:px-3 lg:px-6 sm:flex-shrink-0">
                             <div className="mx-auto">
                                 <div className="flex flex-wrap">

@@ -5,7 +5,6 @@ import { Facebook, Phone, Mail, Building, ArrowRightCircle, TruckIcon, Check } f
 import styles from "./home.module.css";
 import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
 import Link from 'next/link';
-// pages/index.js
 
 import dynamic from 'next/dynamic';
 import {SessionProvider} from "next-auth/react";

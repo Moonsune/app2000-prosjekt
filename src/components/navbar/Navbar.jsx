@@ -1,4 +1,4 @@
-// Laget av Markus Moen Magnussen
+// Laget av Markus Moen Magnussen og Kaisa Lien
 
 import styles from "./navbar.module.css";
 import Links from "./links/Links";

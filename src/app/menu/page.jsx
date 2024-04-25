@@ -1,6 +1,6 @@
 "use client";
 
-//Laget av Markus Moen Magnussen
+//Laget av Markus Moen Magnussen og Kaisa Lien
 
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/postCard/postCard';

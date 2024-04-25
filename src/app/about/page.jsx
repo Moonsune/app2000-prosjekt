@@ -1,3 +1,6 @@
+/*
+    Laget av Kaisa Lien
+ */
 import Image from 'next/image';
 import styles from './about.module.css';
 import {SessionProvider} from "next-auth/react";

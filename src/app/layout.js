@@ -1,3 +1,6 @@
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/Navbar'

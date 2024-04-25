@@ -1,5 +1,6 @@
-// Laget av Markus Moen Magnussen
-
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
