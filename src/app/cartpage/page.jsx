@@ -78,7 +78,7 @@ const CartPage = () => {
                 </div>
                 </form>
                 <div className="text-center">
-                    <button className="text-gray-800 bg-gray-300 text-xl font-semibold rounded-lg p-3 hover:bg-gray-400 duration-300">Checkout</button>
+                    <button className="text-gray-800 bg-gray-300 text-xl font-semibold rounded-lg p-3 hover:bg-gray-400 duration-300">Betal</button>
                 </div>
                 </div>
             </div>
