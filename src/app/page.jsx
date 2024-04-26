@@ -28,7 +28,7 @@ const Home = () => {
             <div className="relative">
               <img src="/5.png" alt="Image" className="w-full object-cover" style={{ maxWidth: '100%', height: '200px' }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-orange-200 text-xl md:text-4xl lg:text-2xl">Burgertirsdag</p>
+                <p className="text-orange-200 text-xl md:text-4xl lg:text-2xl"></p>
               </div>
             </div>
 
