@@ -29,10 +29,10 @@ const CookieConsentBanner = () => {
     <>
       {isVisible && (
         <div className={styles.bannerContainer}>
-          <span>This website uses cookies to enhance user experience. </span>
+          <span>Denne nettsiden bruker cookies for å forbedre brukeropplevelsen din.</span>
           <div className={styles.buttonContainer}>
-            <button className={`${styles.buttonWrapper} ${styles.cookieBtn}`} onClick={handleUnderstand}>I understand</button>
-            <button className={`${styles.buttonWrapper} ${styles.cookieBtn}`} onClick={handleDecline}>I decline</button>
+            <button className={`${styles.buttonWrapper} ${styles.cookieBtn}`} onClick={handleUnderstand}>Jeg forstår</button>
+            <button className={`${styles.buttonWrapper} ${styles.cookieBtn}`} onClick={handleDecline}>Jeg avviser</button>
           </div>
         </div>
       )}
