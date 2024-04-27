@@ -1,0 +1,18 @@
+/*
+    Laget av Kaisa Lien
+ */
+.container {
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .post{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .post{
+        width: 100%;
+    }
+}

@@ -1,11 +1,11 @@
 "use client";
 
-//Laget av Markus Moen Magnussen
+//Laget av Markus Moen Magnussen og Kaisa Lien
 
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/postCard/postCard';
 import styles from './menu.module.css';
-import { Button } from '@mui/material';
+import {SessionProvider} from "next-auth/react";
 // Assuming `getPosts` is not needed if fetching from an API.
 
 //GPT GENERATED CODE: FIX WHEN TIME
@@ -32,6 +32,13 @@ const MenuPage = () => {
     getData();
   }, []); // The empty array means this effect runs once on mount.
 
+  const addToCart = (item) => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const updatedCartItems = [...storedCartItems, item];
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    console.log('Item added to cart:', item);
+};
+
   if (error) {
     return <div>Something went wrong</div>;
   }
@@ -41,13 +48,15 @@ const MenuPage = () => {
   }
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-        <div className={styles.post} key={post.slug}>
-          <PostCard post={post} />
-        </div>
-      ))}
-    </div>
+      <SessionProvider>
+      <div className={styles.container}>
+          {posts.map((post) => (
+              <div className={styles.post} key={post.slug}>
+                  <PostCard post={post} addToCart={addToCart} />
+              </div>
+          ))}
+      </div>
+  </SessionProvider>
   );
 };
 

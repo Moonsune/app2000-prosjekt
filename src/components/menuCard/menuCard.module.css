@@ -1,35 +1,26 @@
-.container{
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */
+.container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
-  
+    text-align: center;
 }
 
-.top{
+.top {
     display: flex;
 }
 
-.imageContainer{
+.imageContainer {
     position: relative;
     width: 90%;
     height: 300px;
-
 }
 
 .img {
     object-fit: cover;
-}
-
-.date {
-    font-size: 12px;
-    transform: rotate(270deg);
-    margin: auto;
-}
-
-.bottom {
-    margin: auto;
-    text-align: center;
 }
 
 .title {
@@ -41,25 +32,28 @@
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: 300;
-    color:  	 	#7B3F00;
-    width: 90%;
+    color: #7B3F00;
 }
 
-.link {
+.priceDiv {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 10px;
+}
+
+
+.priceLarge, .priceSmall {
     text-decoration: underline;
+    background-color: #c2410c;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%; 
+    margin-bottom: 10px; 
 }
 
-.button {
-    
-    background-color: #c2410c; 
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .button:hover {
-    background-color: #fed7aa; 
-  }
+.priceLarge:hover, .priceSmall:hover {
+    background-color: #9a3412;
+    transition: 0.3s;
+}
+

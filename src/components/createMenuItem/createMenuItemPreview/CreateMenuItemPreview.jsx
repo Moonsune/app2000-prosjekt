@@ -1,21 +1,19 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from './postCard.module.css';
+// Laget av Markus Moen Magnussen
 
-const PostCard = ({ post, addToCart, price }) => {
-    const [imgError, setImgError] = React.useState(false);
+import { useState } from 'react';
+import Image from 'next/image';
+import styles from '@/components/createMenuItem/createMenuItemPreview/CreateMenuItemPrview.module.css';
+
+const CreateMenuItemPreview = ({ post }) => {
+    const [imgError, setImgError] = useState(false);
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {
             return src;
         } else {
-            return "https://i.ytimg.com/vi/lq7brEFcNiQ/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBfRdZxjRdNftBy-DY9fqB55uOdag";
+            return process.env.NEXT_PUBLIC_IMG;
         }
     }
-
-    const handleAddToCart = (selectedPrice) => {
-        addToCart({ ...post, quantity: 1, selectedPrice: selectedPrice });
-    };
 
     return (
         <div className={styles.container}>
@@ -29,21 +27,20 @@ const PostCard = ({ post, addToCart, price }) => {
                             onError={() => setImgError(true)}
                         />
                     ) : (
-                        <div>No image available</div>
+                        <div>No image available</div> // Display this when the image fails to load
                     )}
                 </div>
             </div>
             <div className={styles.bottom}>
-            <button className={styles.button}>Bestill</button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
                 <div className={styles.priceDiv}>
-                    <button className={styles.priceLarge} onClick={() => handleAddToCart(post.priceLarge)}>Stor - kr {post.priceLarge}.-</button>
-                    <button className={styles.priceSmall} onClick={() => handleAddToCart(post.priceSmall)}>Liten - kr {post.priceSmall}.-</button>
+                    <button className={styles.priceLarge}>Stor kr {post.priceLarge}.-</button>
+                    <button className={styles.priceSmall}>Liten kr {post.priceSmall}.-</button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default PostCard;
+export default CreateMenuItemPreview;
