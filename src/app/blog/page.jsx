@@ -1,16 +1,13 @@
-"use client";
 
-//Laget av Markus Moen Magnussen
 
 import React, { useState, useEffect } from 'react';
-import PostCard from '@/components/postCard/postCard';
+import PostCard from '@/components/menuCard/menuCard';
 import styles from './menu.module.css';
-import { Button } from '@mui/material';
 // Assuming `getPosts` is not needed if fetching from an API.
 
 //GPT GENERATED CODE: FIX WHEN TIME
 
-const MenuPage = () => {
+const BlogPage = () => {
   const [posts, setPosts] = useState(null);
   const [error, setError] = useState(false);
 
@@ -51,4 +48,4 @@ const MenuPage = () => {
   );
 };
 
-export default MenuPage;
+export default BlogPage;

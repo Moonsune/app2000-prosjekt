@@ -2,14 +2,12 @@
 
 "use client";
 
-import styles from './postCard.module.css';
-
-
+import styles from './menuCard.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-const PostCard = ({post}) => {
+const  PostCard = ({post}) => {
     //const router = useRouter();
 
     console.log (post.img)
@@ -23,6 +21,7 @@ const PostCard = ({post}) => {
                 </div>
             </div>
             <div className={styles.bottom}>
+            <button className={styles.button}>Bestill</button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.text}>{post.desc}</p>
 

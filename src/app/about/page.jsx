@@ -1,3 +1,4 @@
+
 // Laget av Kaisa Lien
 
 import Image from 'next/image';

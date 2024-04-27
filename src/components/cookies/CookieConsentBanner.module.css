@@ -1,0 +1,47 @@
+/* CookieConsentBanner.module.css */
+
+.bannerContainer {
+  font-size: large;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 999; /* Ensure the banner is above other content */
+}
+
+.buttonContainer {
+  margin-left: auto;
+  display: flex;
+  gap: 10px; /* Adjust the spacing between buttons */
+  font-size: large;
+}
+
+.buttonWrapper {
+  background-color: #4CAF50; /* Default button color */
+  border: none;
+  color: white;
+  padding: 3px 10px; /* Adjust padding to make the buttons smaller */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px; /* Adjust font size to make the buttons smaller */
+  cursor: pointer;
+  border-radius: 10px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookieBtn:hover {
+  background-color: #45a049; /* Button color on hover */
+}
+
+.CookieConsent {
+  display: none; /* Hide the default banner */
+}
