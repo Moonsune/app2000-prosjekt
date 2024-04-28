@@ -1,13 +1,16 @@
-// Laget av Markus Moen Magnussen
+// Laget av Markus Moen Magnussen og Kaisa Lien
 
 "use client";
 import Link from "next/link";
 import { Facebook, Phone, Mail, Building } from 'lucide-react';
+import {SessionProvider} from "next-auth/react";
+import BookingForm from "@/components/contactForm/BookingForm";
 
 const ContactPage = () => {
     console.log('test');
     return (
         <>
+            <SessionProvider>
             <div className="container my-24 mx-auto md:px-8">
                 <section className="mb-32">
                     <div className="flex justify-center">
@@ -17,7 +20,6 @@ const ContactPage = () => {
                     </div>
 
                     <div className="flex flex-wrap">
-                        {/* Contact Information */}
                         <div className="w-full sm:w-1/2 lg:w-1/2 mb-12 md:px-3 lg:px-6 sm:flex-shrink-0">
                             <div className="mx-auto">
                                 <div className="flex flex-wrap">
@@ -84,6 +86,10 @@ const ContactPage = () => {
                     </div>
                 </section>
             </div>
+            <div>
+                <BookingForm />
+            </div>
+            </SessionProvider>
         </>
     );
 }

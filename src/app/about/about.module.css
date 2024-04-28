@@ -1,5 +1,6 @@
-.imageContainer{
-    position: relative;
-    width: 100px;
-    height: 100px;
+/*
+    Laget av Kaisa Lien
+ */
+.container {
+    background-image: url('/Bakgrunn.jpg');
 }

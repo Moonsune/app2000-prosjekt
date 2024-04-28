@@ -1,6 +1,4 @@
-"use client";
 
-//Laget av Markus Moen Magnussen
 
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/menuCard/menuCard';

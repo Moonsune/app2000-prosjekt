@@ -1,17 +1,15 @@
-// Laget av Markus Moen Magnussen
-
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import styles from './links.module.css';
-import logOutStyle from './navLink/navLink.module.css';
 import NavLink from './navLink/navLink';
-import { signOut, handleLoginGithub } from '@/app/lib/auth';
 import {SessionProvider} from "next-auth/react";
 import LoginLogoutButton from "@/components/loginLogoutButton/LoginLogoutButton";
 
-const Links = ({ session }) => {
+const Links = () => {
     const [showMenu, setShowMenu] = useState(false);
     const hamburgerRef = useRef(null);
     const dropdownRef = useRef(null);
@@ -20,9 +18,9 @@ const Links = ({ session }) => {
         { title: 'Hjem', path: '/' },
         { title: 'Om oss', path: '/about' },
         { title: 'Kontakt', path: '/contact' },
-        { title: 'CRUD-test', path: '/blog' },
         { title: 'Meny', path: '/menu' },
-        { title: 'serverActionTest', path: '/serveractiontest'}
+        { title: 'Handlekurv', path: '/cartpage'},
+        { title: 'Endre Meny', path: '/endremeny'},
     ];
 
     useEffect(() => {
@@ -62,6 +60,7 @@ const Links = ({ session }) => {
                         <NavLink item={link} />
                     </div>
                 ))}
+                {/* TODO: Denne er kun her for debugging, flytt til egen side login*/}
                 <SessionProvider>
                     <LoginLogoutButton />
                 </SessionProvider>

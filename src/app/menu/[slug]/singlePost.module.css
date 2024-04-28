@@ -1,5 +1,3 @@
-/*Laget av Markus Moen Magnussen*/
-
 .container{
     display: flex;
     gap: 100px;
@@ -40,7 +38,7 @@
 }
 
 .detailTitle{
-    color: saddlebrown;
+    color: gray;
     font-weight: bold;
 }
 
@@ -51,6 +49,7 @@
 .content{
     font-size: 20px;
 }
+
 
 @media (max-width: 768px){
     .imgContainer{

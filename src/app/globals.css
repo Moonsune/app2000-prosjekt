@@ -1,6 +1,15 @@
-@tailwind base;
+
+/*
+    Laget av Markus Moen Magnussen og Kaisa Lien
+ */@tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 :root {
   --bg: #81735f;
@@ -20,7 +29,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   display: flex;
-  justify-content: center; /* Horizontally center content */
+  justify-content: center; 
 }
 
 a {

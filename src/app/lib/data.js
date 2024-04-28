@@ -2,8 +2,6 @@
 
 import { connectToDb } from "./connectToDb";
 import { Menu } from "./models";
-import { User } from "./models";
-
 
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -32,29 +30,5 @@ export const getPost = async (id) => {
     } catch (error) {
         console.log(error);
         throw new Error('Error getting post');
-    }
-}
-
-export const getUser = async (id) => {
-    try {
-        connectToDb();
-        const user = await (User.findById(id));
-        return user;
-        
-    } catch (error) {
-        console.log(error);
-        return "unknown user";
-    }
-}
-
-export const getUsers = async () => {
-    try {
-        connectToDb();
-        const user = await User.find();
-        return user;
-        
-    } catch (error) {
-        console.log(error);
-        throw new Error('Error getting user');
     }
 }
