@@ -1,9 +1,16 @@
+
+// Laget av Markus Moen Magnussen
+
+"use client";
+
+import styles from './postCard.module.css';
+
 import React from 'react';
 import Image from 'next/image';
 import styles from './menuCard.module.css';
 
-const PostCard = ({ post, addToCart, price }) => {
-    const [imgError, setImgError] = React.useState(false);
+const PostCard = ({post}) => {
+    //const router = useRouter();
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {
