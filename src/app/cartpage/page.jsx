@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import Cart from '@/components/cart/Cart';
 import styles from './cartpage.module.css';
+import {SessionProvider} from "next-auth/react";
 
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -27,12 +28,15 @@ const CartPage = () => {
     }, []);
 
     return (
+        <SessionProvider>
         <div className="container mx-auto bg-white">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="md:col-span-1 mt-auto mb-auto">
                     <Cart cartItems={cartItems} removeFromCart={removeFromCart} clearCart={clearCart} />
                 </div>
                 <div className="md:col-span-1 mt-10 mb-10 mr-5 ml-5">
+                     {/*Form er inspirert og hentet fra https://v1.tailwindcss.com/components/forms*/} 
+                                     
                 <form class="w-full">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -83,6 +87,7 @@ const CartPage = () => {
                 </div>
             </div>
         </div>
+        </SessionProvider>
     );
 };
 

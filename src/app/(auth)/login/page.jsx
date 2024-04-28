@@ -10,7 +10,7 @@ const LoginPage = async () => {
         <div>
             <form action={handleGithubLogin}>
                 <button >
-                    login with Github
+                    Logg inn med Github
                 </button>
             </form>
         </div>

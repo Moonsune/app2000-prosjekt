@@ -21,7 +21,6 @@ const Links = () => {
         { title: 'Meny', path: '/menu' },
         { title: 'Handlekurv', path: '/cartpage'},
         { title: 'Endre Meny', path: '/endremeny'},
-        { title: 'Logg Inn', path: '/signin'}
     ];
 
     useEffect(() => {

@@ -8,7 +8,7 @@ import GitHubProvider from "next-auth/providers/github";
 
 // lagret som strings, ikke numre!
 // TODO: potensielt ikke den sikreste løsninga
-const adminGithubIds = ['99993823', '113191400'];
+const adminGithubIds = ['99993823', '113191400', '6068403'];
 
 // litt usikker på hvordan denne export greia fungerer
 // vet at NextAuth er deconstructed men ikke nødvendigvis hva det gjør
