@@ -2,7 +2,7 @@
 
 //Laget av Markus Moen Magnussen og Kaisa Lien
 import React, { useState, useEffect } from 'react';
-import PostCard from '@/components/postCard/postCard';
+import MenuCard from '@/components/menuCard/menuCard';
 import CartIndicator from '@/components/cartIndicator/cartIndicator'; 
 import styles from './menu.module.css';
 import { SessionProvider } from "next-auth/react";
@@ -49,7 +49,7 @@ const MenuPage = () => {
 
                 {posts.map((post) => (
                     <div className={styles.post} key={post.slug}>
-                        <PostCard post={post} addToCart={addToCart} />
+                        <MenuCard post={post} addToCart={addToCart} />
                     </div>
                 ))}
             </div>

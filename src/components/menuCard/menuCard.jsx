@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './postCard.module.css';
+import styles from './menuCard.module.css';
 
 const PostCard = ({ post, addToCart, price }) => {
     const [imgError, setImgError] = React.useState(false);
