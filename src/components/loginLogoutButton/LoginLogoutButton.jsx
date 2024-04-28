@@ -19,7 +19,7 @@ const LoginLogoutButton = () => {
 
     return (
         <button onClick={handleAuthAction}>
-            {session ? 'Log out' : 'Log in with GitHub'}
+            {session ? 'Logg ut' : 'Logg inn med GitHub'}
         </button>
     );
 };

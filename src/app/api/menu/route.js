@@ -1,7 +1,7 @@
 //Laget av Markus Moen Magnussen
 
 import { connectToDb } from "@/app/lib/connectToDb";
-import {Menu} from "@/app/lib/models";
+import { Menu } from "@/app/lib/models";
 import { NextResponse } from "next/server";
 import { unstable_noStore as noStore } from "next/cache";
 

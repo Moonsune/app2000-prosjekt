@@ -56,7 +56,13 @@ const UpdatePostComponent = () => {
     }, [currentDesc]);
 
     const handleChange = (event) => {
+    console.log(event.target.value);
         setSelectedItem(event.target.value);
+        setTitle(event.target.value.title);
+        setDesc(event.target.value.desc);
+        setImage(event.target.value.img);
+        setCurrentPriceLarge(event.target.value.priceLarge);
+        setCurrentPriceSmall(event.target.value.priceSmall);
     };
 
     if (loading) return <div>Loading...</div>;

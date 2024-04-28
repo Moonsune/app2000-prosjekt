@@ -7,14 +7,14 @@ import CartIndicator from '@/components/cartIndicator/cartIndicator';
 import styles from './menu.module.css';
 import { SessionProvider } from "next-auth/react";
 
-const BlogPage = () => {
+const MenuPage = () => {
     const [posts, setPosts] = useState(null);
     const [cartItems, setCartItems] = useState([]); 
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch(process.env.NEXT_PUBLIC_BLOG_PATH, { method: 'GET' });
+                const res = await fetch(process.env.NEXT_PUBLIC_MENU_PATH, { method: 'GET' });
                 if (!res.ok) {
                     throw new Error('Failed to fetch', res.status, res.statusText);
                 }
@@ -57,4 +57,4 @@ const BlogPage = () => {
     );
 };
 
-export default BlogPage;
+export default MenuPage;

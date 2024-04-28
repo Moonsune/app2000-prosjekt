@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import Cart from '@/components/cart/Cart';
 import styles from './cartpage.module.css';
+import {SessionProvider} from "next-auth/react";
 
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -27,6 +28,7 @@ const CartPage = () => {
     }, []);
 
     return (
+        <SessionProvider>
         <div className="container mx-auto bg-white">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="md:col-span-1 mt-auto mb-auto">
@@ -85,6 +87,7 @@ const CartPage = () => {
                 </div>
             </div>
         </div>
+        </SessionProvider>
     );
 };
 
