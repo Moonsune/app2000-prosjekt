@@ -3,8 +3,6 @@
 
 "use client";
 
-import styles from './postCard.module.css';
-
 import React from 'react';
 import Image from 'next/image';
 import styles from './menuCard.module.css';

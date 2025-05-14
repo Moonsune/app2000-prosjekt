@@ -1,12 +1,9 @@
-
+"use client";
 import styles from "./singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";
 import { Suspense } from "react";
 import { Post } from "@/app/lib/models";
-import { getPost, getUser } from "@/app/lib/data";
-import { useRouter } from 'next/navigation'
-import { NextResponse } from "next/server";
 
 
 // FETCH DATA WITH API
