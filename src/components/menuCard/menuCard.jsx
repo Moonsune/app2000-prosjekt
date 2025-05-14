@@ -7,15 +7,14 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './menuCard.module.css';
+import { useCart } from '@/context/CartContext';
 
 const PostCard = ({post}) => {
     //const router = useRouter();
 
     const [imgError, setImgError] = React.useState(false);
 
-    const addToCart = () => {
-        console.log("addToCart triggered");
-    }
+    const {addToCart} = useCart();
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {

@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './Cart.module.css';
+import { useCart } from '@/context/CartContext';
 
-const Cart = ({ cartItems, removeFromCart, clearCart }) => {
+const Cart = () => {
+    const { cartItems, clearCart, removeFromCart} = useCart();
+
     const totalPrice = cartItems.reduce((total, item) => total + (item.selectedPrice * item.quantity), 0);
 
     return (

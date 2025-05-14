@@ -1,22 +1,26 @@
-//Laget av Markus Moen Magnussen
+// Laget av Markus Moen Magnussen – dummyversjon
 
-import { connectToDb } from "@/app/lib/connectToDb";
-import { Menu } from "@/app/lib/models";
 import { NextResponse } from "next/server";
-import { unstable_noStore as noStore } from "next/cache";
 
-
-export const GET = async ( req ) => {
-    //cache.delete('posts');
-    noStore();
-    try {
-        await connectToDb();
-
-        const posts = await Menu.find();
-        return NextResponse.json(posts);
-        
-    } catch (error) {
-        console.log(error);
-        throw new Error('Error');
+export const GET = async () => {
+  const dummyMenu = [
+    {
+      _id: "1",
+      title: "Pizza Margherita",
+      desc: "Klassisk pizza med tomatsaus og ost",
+      priceSmall: 100,
+      priceLarge: 150,
+      img: "https://via.placeholder.com/300"
+    },
+    {
+      _id: "2",
+      title: "Pepperoni",
+      desc: "Pizza med pepperoni og ekstra ost",
+      priceSmall: 120,
+      priceLarge: 170,
+      img: "https://via.placeholder.com/300"
     }
-}
+  ];
+
+  return NextResponse.json(dummyMenu);
+};

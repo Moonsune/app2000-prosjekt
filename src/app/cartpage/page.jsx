@@ -4,11 +4,11 @@
  */
 import React, { useState, useEffect } from 'react';
 import Cart from '@/components/cart/Cart';
-import styles from './cartpage.module.css';
+import { useCart } from '@/context/CartContext';
 import {SessionProvider} from "next-auth/react";
 
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([]);
+    const {cartItems, addToCart, setCartItems} = useCart();
 
     const removeFromCart = (index) => {
         const updatedCartItems = [...cartItems];
@@ -22,10 +22,6 @@ const CartPage = () => {
         localStorage.removeItem('cartItems');
     };
 
-    useEffect(() => {
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        setCartItems(storedCartItems);
-    }, []);
 
     return (
         <SessionProvider>

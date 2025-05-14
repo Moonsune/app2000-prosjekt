@@ -11,10 +11,9 @@ const ContactPage = () => {
     return (
         <>
             <SessionProvider>
-            <div className="container my-24 mx-auto md:px-8">
-                <section className="mb-32">
+            <div className="container bg-white mx-auto md:px-8 text-black">
                     <div className="flex justify-center">
-                        <div className="text-center md:max-w-xl lg:max-w-3xl">
+                        <div className="text-center md:max-w-xl lg:max-w-3xl my-16">
                             <h2 className="mb-12 px-6 text-3xl font-bold">Kontakt oss</h2>
                         </div>
                     </div>
@@ -84,9 +83,8 @@ const ContactPage = () => {
                             </div>
                         </div>
                     </div>
-                </section>
             </div>
-            <div>
+            <div className="bg-white">
                 <BookingForm />
             </div>
             </SessionProvider>

@@ -30,7 +30,7 @@ export const BookingForm = () => {
     };
 
     return (
-        <FormControl fullWidth margin="normal" sx={{ display: "flex", flexDirection: "column" }}>
+        <FormControl fullWidth margin="normal" sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 2 }}>
             <TextField
                 id="email-label"
                 label="Din Epost"
