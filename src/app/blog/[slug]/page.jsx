@@ -1,5 +1,5 @@
 "use client";
-import styles from "./singlePost.module.css";
+import styles from "../../menu/[slug]/singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";
 import { Suspense } from "react";
