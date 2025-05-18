@@ -8,6 +8,9 @@
 
 - Bruker dummydata i denne versjonen, men er funksjonell med database
 
+## Vercel
+https://app2000-prosjekt.vercel.app
+
 ## Ferdigstilt: 29.05.2024
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
