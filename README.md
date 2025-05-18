@@ -1,3 +1,12 @@
+# Applikasjon for Pizzafjoset
+
+## Funksjoner
+
+- Se meny, legg til i handlekurv og bestill
+- Kontakt oss med mulighet for booking
+- Mulighet for admins å logge inn med GitHub og endre meny
+
+- Bruker dummydata i denne versjonen, men er funksjonell med database
 
 ## Ferdigstilt: 29.05.2024
 
