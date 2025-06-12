@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './cartIndicator.module.css';
+import { useCart } from "@/context/CartContext";
 
 const CartIndicator = ({ items }) => {
-    if (items.length === 0) {
+    if (!items || items.length === 0) {
         return null; 
     }
     const itemCounts = items.reduce((acc, item) => {

@@ -14,7 +14,7 @@ const PostCard = ({post}) => {
 
     const [imgError, setImgError] = React.useState(false);
 
-    const {addToCart} = useCart();
+    const {addToCart, cartItems} = useCart();
 
     const imageValidation = (src) => {
         if (src && (src.startsWith('http') || src.startsWith('https'))) {

@@ -12,6 +12,11 @@ const MenuPage = () => {
     const [cartItems, setCartItems] = useState([]); 
 
     useEffect(() => {
+        const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        setCartItems(storedCartItems);
+    }, []);
+
+    useEffect(() => {
         const getData = async () => {
             try {
                 const res = await fetch(process.env.NEXT_PUBLIC_MENU_PATH, { method: 'GET' });
@@ -39,6 +44,9 @@ const MenuPage = () => {
     if (!posts) {
         return <div>Loading...</div>; 
     }
+
+    console.log("cartItems", cartItems);
+
 
     return (
         <SessionProvider>            

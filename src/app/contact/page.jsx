@@ -77,7 +77,7 @@ const ContactPage = () => {
                             <div style={{ maxWidth: '600px', margin: 'auto' }}>
                                 <iframe
                                     style={{ width: '100%', height: '450px', border: '0' }}
-                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8o_OhY-ivXSJz9sEC7wL6YI-eHUM3hfE&q=59.41463851928711,9.059505462646484"
+                                    src=""
                                     allowFullScreen
                                 ></iframe>
                             </div>
